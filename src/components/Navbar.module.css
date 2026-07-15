@@ -1,0 +1,258 @@
+/* Exact Hily header styles */
+
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 0 50px;
+  z-index: 10;
+  transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+}
+@media(max-width:1280px) { .header { padding:0 25px; } }
+@media(max-width:1199px) { .header { padding:0 20px; } }
+
+/* Hily scrolled: black frosted header */
+.header::before {
+  position: absolute; top:0; left:0; width:100%; height:200px;
+  content: ''; background: #000;
+  transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  border-radius: 0 0 80% 80%;
+  transform: scale(0.8) translateY(-120%);
+}
+.scrolled .header::before,
+.header.scrolled::before { opacity:1; transform:scale(1) translateY(0); border-radius:0; height:100%; }
+
+/* wrapper */
+.wrapper {
+  position: relative;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 130px;
+  transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  z-index: 1;
+}
+@media(max-width:1199px) { .wrapper { height:78px; justify-content:flex-start; } }
+.scrolled .wrapper { height:102px; }
+@media(max-width:767px) { .scrolled .wrapper { height:66px; } }
+
+/* Logo — Hily uses SVG mask; we use text */
+.logo {
+  position: relative;
+  display: inline-flex; align-items: center;
+  width: 160px; height: 50px;
+  font-size: 1.5rem; font-weight: 800;
+  letter-spacing: -0.02em;
+  transition: all 0.3s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  text-decoration: none;
+}
+@media(max-width:1199px) { .logo { width:auto; height:38px; } }
+.logo:hover { opacity:0.8; }
+
+.logoText {
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+@media(max-width:767px) { .logoText { font-size: 1.2rem; } }
+/* When scrolled or on home (video bg), logo becomes white */
+.home .logoText { color: #fff; }
+.scrolled .logoText { color: #fff; }
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+}
+@media(max-width:1199px) {
+  .nav {
+    position: fixed; top:0; right:-100%; width:362px; height:100%;
+    z-index:2; justify-content:center;
+    transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+    opacity:0; background: rgba(0,0,0,0.97);
+  }
+  .navOpen { right:0; opacity:1; }
+}
+
+/* Close button in mobile menu */
+.closeMenuBtn {
+  display: none;
+}
+@media(max-width:1199px) {
+  .closeMenuBtn {
+    display: block; position:absolute; top:20px; right:20px;
+    width:40px; height:40px; border-radius:50%;
+    background: rgba(255,255,255,0.1);
+    cursor:pointer; border:none;
+    color:#fff; font-size:1.2rem;
+  }
+  .closeMenuBtn::before { content:'✕'; }
+}
+
+/* Nav links */
+.nav ul {
+  display: flex; align-items: center;
+  margin:0; padding:0; list-style:none;
+}
+@media(max-width:1199px) {
+  .nav ul {
+    flex-direction:column; justify-content:center;
+    margin-left: 60px; height:100%;
+  }
+}
+
+.navLink { margin-left: 48px; }
+@media(max-width:1280px) { .navLink { margin-left:20px; } }
+@media(max-width:1199px) { .navLink { margin-left:0; margin-top:48px; } }
+.navLink:first-child { margin-left:0; }
+.navLink:last-child { display:none; }
+@media(max-width:1199px) { .navLink:last-child { display:block; margin-top:21px; } }
+
+.navLink a {
+  position: relative;
+  font-size: 20px; line-height: 1.2em;
+  color: #000; font-weight: 400;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+}
+.navLink a::before {
+  position:absolute; bottom:-6px; left:0; right:0;
+  content:''; height:4px; background: #a182ff;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  opacity:0; transform:scale(0.8);
+}
+.navLink a:hover {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(255,255,255,0.3) 20%, #fff 50%, rgba(255,255,255,0.3) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+  transition: 0.35s;
+}
+.navLink a:hover::before { opacity:1; transform:scale(1); }
+/* Active route underline */
+.activeLink::before { opacity:1 !important; transform:scale(1) !important; }
+/* Home: white nav links */
+.home .navLink a,
+.scrolled .navLink a { color:#fff; }
+@media(max-width:1199px) { .home .navLink a, .navLink a { color:#fff !important; } }
+
+/* Download App wrapper */
+.dwnWrapper {
+  position: relative;
+  margin-left: 75px;
+}
+@media(max-width:1199px) { .dwnWrapper { display:none; } }
+
+.dwnButton {
+  position: relative;
+  height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: #000;
+  transition: all 0.3s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  border-radius: 14px;
+  font-size: 20px; font-weight: 700;
+  color: #fff;
+  padding: 0 40px 0 84px;
+  text-decoration: none;
+  z-index: 1; overflow: hidden;
+  cursor: pointer; border: none; font-family: inherit;
+}
+/* On home, button becomes white */
+.home .dwnButton { background:#fff; color:#000; }
+.scrolled .dwnButton { background:#fff; color:#000; }
+.dwnButton:hover { background:transparent; }
+.dwnButton::before {
+  position:absolute; width:25%; height:100%; background:#fff;
+  left:0; transition:0.5s; transition-delay:0s;
+  z-index:-1; transform:translateY(150%); content:''; border-radius:100%;
+}
+.dwnButton::after {
+  position:absolute; width:25%; height:100%; background:#fff;
+  left:80%; transition:0.5s; transition-delay:0.2s;
+  z-index:-1; border-radius:100%; transform:translateY(150%); content:'';
+}
+.dwnButton:hover::before,.dwnButton:hover::after { transform:translateY(0) scale(4); }
+.home .dwnButton::before,.home .dwnButton::after { background:#a182ff; }
+
+/* Icons in button — inline SVGs, inherit the button's text color */
+.appleI,.googleI,.arrow {
+  position:absolute; top:50%;
+  width:24px; height:24px; margin-top:-12px;
+  background:none;
+  color: currentColor;
+  transition: all 0.3s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  display:inline-flex; align-items:center; justify-content:center;
+}
+.appleI svg,.googleI svg { width:21px; height:21px; }
+.appleI { left:16px; }
+.googleI { left:44px; }
+.arrow { right:14px; width:16px; height:16px; margin-top:-8px; }
+.arrow svg { width:14px; height:14px; }
+.active .arrow { transform:rotate(180deg); }
+
+/* Download dropdown block */
+.dwnBlock {
+  position:absolute; top:calc(100% + 27px); right:0;
+  border-radius:16px; overflow:hidden; width:385px;
+  transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  transform:rotateY(40deg) rotateX(45deg) translate(290px,-290px) skew(-35deg,10deg) scale(0.2);
+  opacity:0; border:1px solid #fff;
+  pointer-events:none;
+}
+.open .dwnBlock { transform:none; opacity:1; pointer-events:all; }
+
+.blockWrp {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:32px 37px 37px; background:#fff;
+}
+.blockWrp .item { text-align:center; }
+.title {
+  position:relative; display:inline-flex; align-items:center;
+  height:28px; padding:0 8px 0 36px;
+  border-radius:10px; background:#000;
+  font-size:15px; font-weight:500; color:#fff;
+  margin-bottom:12px;
+  transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  text-decoration:none;
+}
+.title:hover { background:#a182ff; }
+.qrCode { width:80px; height:80px; margin:0 auto; }
+.qrPlaceholder { width:100%; height:100%; background:#f0f0f0; border-radius:8px; }
+.bottomBlock {
+  display:flex; align-items:center; justify-content:center;
+  height:45px; background:#000;
+  font-size:13px; line-height:21px; color:#fff; font-weight:400;
+}
+
+/* Mobile "Download App" button (top right on mobile) */
+.mobDwnButton {
+  display: none;
+}
+@media(max-width:1199px) {
+  .mobDwnButton {
+    position:relative; display:flex; align-items:center; justify-content:center;
+    width:auto; height:38px; white-space:nowrap;
+    background:#000; border-radius:14px;
+    font-size:14px; font-weight:800; color:#fff;
+    padding:0 18px;
+    transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+    margin-left:auto; text-decoration:none;
+  }
+  .home .mobDwnButton { background:#fff; color:#000; }
+  .scrolled .mobDwnButton { background:#fff; color:#000; }
+}
+
+/* Burger menu */
+.btnBurger {
+  display: none;
+}
+@media(max-width:1199px) {
+  .btnBurger {
+    display:flex; align-items:center; justify-content:center;
+    width:28px; height:28px; background:#000;
+    margin-left:16px; cursor:pointer; border:none;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'/%3E%3C/svg%3E") 0 0 no-repeat;
+    mask-size:100% auto;
+    transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  }
+  .home .btnBurger { background:#fff; }
+  .scrolled .btnBurger { background:#fff; }
+}

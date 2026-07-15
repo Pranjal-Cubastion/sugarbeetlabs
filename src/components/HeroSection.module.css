@@ -1,0 +1,158 @@
+/* SugarBeet Hero — full-bleed photographic hero (matches Hily section-1) */
+.hero {
+  position: relative;
+  min-height: 102vh;
+  display: flex;
+  align-items: flex-end;
+  background: #a182ff;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 100svh;
+  }
+}
+
+/* Background image */
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImg {
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+/* Dark scrim for text legibility — darker on the left/bottom where text sits */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(12, 8, 28, 0.74) 0%, rgba(12, 8, 28, 0.45) 42%, rgba(12, 8, 28, 0.12) 100%),
+    linear-gradient(180deg, rgba(12, 8, 28, 0.28) 0%, rgba(12, 8, 28, 0) 38%, rgba(12, 8, 28, 0.55) 100%);
+}
+
+/* Content container */
+.inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 50px clamp(56px, 10vh, 130px);
+}
+
+@media (max-width: 1680px) {
+  .inner {
+    max-width: 1400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .inner {
+    padding: 0 20px 12vh;
+  }
+}
+
+.content {
+  max-width: 780px;
+}
+
+@media (max-width: 1054px) {
+  .content {
+    max-width: none;
+    text-align: center;
+  }
+}
+
+/* H1 — huge, white, tight leading */
+.h1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  font-size: clamp(56px, 10.5vw, 160px);
+  font-weight: 800;
+  line-height: 0.82;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.h1 span {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 1054px) {
+  .h1 {
+    justify-content: center;
+  }
+}
+
+/* Tagline */
+.tagline {
+  margin: 30px 0 0;
+  font-size: clamp(20px, 2.1vw, 34px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .tagline {
+    margin-top: 16px;
+  }
+}
+
+/* CTA — white pill that inverts to black on hover */
+.cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 42px;
+  height: 74px;
+  padding: 0 46px;
+  min-width: 240px;
+  border-radius: 40px;
+  background: #fff;
+  color: #000;
+  font-size: 22px;
+  font-weight: 800;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.5s var(--ease-hily);
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #000;
+  border-radius: 40px;
+  transform: translateY(100%) scale(0.6);
+  opacity: 0;
+  transition: all 0.5s var(--ease-hily);
+}
+
+.cta:hover {
+  color: #fff;
+}
+
+.cta:hover::after {
+  transform: translateY(0) scale(1.5);
+  opacity: 1;
+  border-radius: 0;
+}
+
+@media (max-width: 767px) {
+  .cta {
+    height: 64px;
+    min-width: 200px;
+    margin-top: 28px;
+  }
+}

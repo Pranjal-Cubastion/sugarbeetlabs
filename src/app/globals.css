@@ -1,26 +1,158 @@
 @import "tailwindcss";
 
+/* ============================================================
+   SUGARBEET — Exact Hily Clone
+   Font: Bagoss Standard (Hily's display font), DM Sans fallback
+   Colors: Exact Hily palette
+   ============================================================ */
+
+/* ---- Font Face: Bagoss Standard (self-hosted in /public) ---- */
+@font-face {
+  font-family: 'Bagoss Standard';
+  src: url('/bagoss-standard/BagossStandardTRIAL-Light.woff2') format('woff2'),
+       url('/bagoss-standard/BagossStandardTRIAL-Light.woff') format('woff');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Bagoss Standard';
+  src: url('/bagoss-standard/BagossStandardTRIAL-Regular.woff2') format('woff2'),
+       url('/bagoss-standard/BagossStandardTRIAL-Regular.woff') format('woff');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Bagoss Standard';
+  src: url('/bagoss-standard/BagossStandardTRIAL-RegularItalic.woff2') format('woff2'),
+       url('/bagoss-standard/BagossStandardTRIAL-RegularItalic.woff') format('woff');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Bagoss Standard';
+  src: url('/bagoss-standard/BagossStandardTRIAL-Medium.woff2') format('woff2'),
+       url('/bagoss-standard/BagossStandardTRIAL-Medium.woff') format('woff');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Bagoss Standard';
+  src: url('/bagoss-standard/BagossStandardTRIAL-SemiBold.woff2') format('woff2'),
+       url('/bagoss-standard/BagossStandardTRIAL-SemiBold.woff') format('woff');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+/* Bold covers 700–900 so heading weights (800) use the real Bold cut, no faux-bold */
+@font-face {
+  font-family: 'Bagoss Standard';
+  src: url('/bagoss-standard/BagossStandardTRIAL-Bold.woff2') format('woff2'),
+       url('/bagoss-standard/BagossStandardTRIAL-Bold.woff') format('woff');
+  font-weight: 700 900; font-style: normal; font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Hily exact palette */
+  --hily-purple:    #a182ff;
+  --hily-purple-2:  #9677ff;
+  --hily-orange:    #ea502b;
+  --hily-pink:      #e37dd3;
+  --hily-black:     #000000;
+  --hily-white:     #ffffff;
+
+  /* Typography — Bagoss Standard, DM Sans (next/font var) as fallback */
+  --font-body: 'Bagoss Standard', var(--font-dm), -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Easing */
+  --ease-hily: cubic-bezier(0.21, 0.68, 0.41, 0.83);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Don't synthesize weights/italics we don't ship */
+html { font-synthesis: none; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ---- Reset (matches Hily) ---- */
+*,*::before,*::after { box-sizing:border-box; }
+html { font-family: var(--font-body); font-size: 150%; -webkit-text-size-adjust:100%; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin:0; padding:0;
+  font-family: var(--font-body);
+  font-size: 24px; line-height: 1.6em;
+  font-weight: 700; color: var(--hily-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
+h1,h2,h3,h4,h5,h6 { margin:0; }
+p { margin:0; }
+a { text-decoration:none; color: var(--hily-purple); }
+img { max-width:100%; height:auto; border:0; }
+ul,ol { margin:0; padding:0; list-style:none; }
+button { cursor:pointer; border:none; background:none; font-family:inherit; }
+input[type=text],input[type=email],input[type=password],textarea { -webkit-appearance:none; }
+* { box-sizing:border-box; }
+
+/* Focus: hide the ring for mouse/touch, but ALWAYS show a visible ring for
+   keyboard users. Orange reads clearly on the site's white, purple, and photo
+   backgrounds. (Replaces the old blanket `outline:none`, which was a WCAG
+   2.4.7 failure.) */
+:focus:not(:focus-visible) { outline: none; }
+:focus-visible {
+  outline: 3px solid var(--hily-orange);
+  outline-offset: 2px;
+}
+
+/* ---- Hily .container ---- */
+.container {
+  padding-left: 32px;
+  padding-right: 32px;
+  max-width: 1084px;
+  margin: 0 auto;
+}
+
+/* ---- Hily .btn (exact clone) ---- */
+.btn {
+  position:relative; display:inline-flex; align-items:center;
+  height:78px; width:263px;
+  font-size:24px; font-weight:800; line-height:36px;
+  text-align:center; color:#fff;
+  z-index:1; justify-content:center; overflow:hidden;
+  border-radius:30px;
+  transition:all 0.6s var(--ease-hily);
+  font-family: var(--font-body);
+}
+.btn:hover { color:#000; }
+.btn:hover::after { transform:translate(0,0) scale(1); opacity:1; border-radius:0; }
+.btn::before {
+  position:absolute; top:0; left:0; content:'';
+  width:263px; height:78px;
+  background-color:#000; z-index:-2;
+  border-radius:30px;
+}
+.btn::after {
+  position:absolute; top:0; left:0; content:'';
+  width:263px; height:78px;
+  background-color:#fff; z-index:-1;
+  transform:translate(0%,100%) scale(0.5);
+  transition:all 0.6s var(--ease-hily);
+  border-radius:100%; opacity:0;
+}
+
+/* ---- Keyframes ---- */
+@keyframes shine {
+  from { mask-position:150%; -webkit-mask-position:150%; }
+  to   { mask-position:-50%; -webkit-mask-position:-50%; }
+}
+@keyframes blockUpAnimation {
+  from { transform:translateY(10%); }
+  to   { transform:translateY(0); }
+}
+@keyframes bounceArrowLeft {
+  0%,20%,50%,80%,100% { transform:translateX(-50%) translateY(-50%); }
+  40% { transform:translateX(calc(-50% + 5px)) translateY(-50%); }
+  60% { transform:translateX(calc(-50% - 5px)) translateY(-50%); }
+}
+@keyframes bounceArrowNext {
+  0%,20%,50%,80%,100% { transform:translateX(-50%) translateY(-50%); }
+  40% { transform:translateX(calc(-50% + 5px)) translateY(-50%); }
+  60% { transform:translateX(calc(-50% - 5px)) translateY(-50%); }
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:#f0f0f0; }
+::-webkit-scrollbar-thumb { background:#a182ff; border-radius:3px; }
+::selection { background:var(--hily-purple); color:#fff; }

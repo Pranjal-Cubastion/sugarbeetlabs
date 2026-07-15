@@ -1,0 +1,120 @@
+/* Exact Hily Section 4 */
+.section4 {
+  background: #000;
+}
+
+.swiperContainer {
+  height: 640px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: #000;
+  position: relative;
+  /* hide scrollbar */
+  scrollbar-width: none;
+}
+.swiperContainer::-webkit-scrollbar { display: none; }
+@media(max-width:1024px) { .swiperContainer { height:450px; } }
+@media(max-width:767px) { .swiperContainer { height:300px; } }
+
+.swiperWrapper {
+  display: flex;
+  height: 100%;
+}
+
+.swiperSlide {
+  position: relative;
+  display: flex;
+  flex: 0 0 640px;
+  width: 640px;
+  cursor: pointer;
+}
+@media(max-width:1024px) { .swiperSlide { flex:0 0 450px; width:450px; } }
+@media(max-width:767px) { .swiperSlide { flex:0 0 300px; width:300px; } }
+
+/* Dimmer overlay */
+.swiperSlide::before {
+  position: absolute; top:0; left:0; right:0; bottom:0;
+  content: ''; background: rgba(0,0,0,0.133);
+  z-index: 1; pointer-events: none;
+}
+
+.swiperSlide img {
+  object-fit: cover;
+  display: flex;
+  width: 100%; height: 100%;
+}
+
+/* Hover block */
+.hoverBlock {
+  position: absolute; bottom:0; left:0; right:0;
+  padding: 0 50px 50px;
+  display: block; z-index: 2;
+}
+@media(max-width:1024px) { .hoverBlock { padding:0 25px 25px; } }
+@media(max-width:767px) { .hoverBlock { padding:0 14px 14px; } }
+
+/* The orange/red blob that comes up on hover */
+.hoverBlock::before {
+  position: absolute; bottom:0; left:0; right:0;
+  background: #e64626; /* Hily orange */
+  content: ''; z-index: -1; height: 0;
+  transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  transition-delay: 0s;
+  transform: scale(0.5);
+  border-radius: 80% 80% 0 0;
+  opacity: 0;
+}
+
+/* Hover animations */
+.swiperSlide:hover .hoverBlock::before {
+  height: 429px;
+  transition-delay: 0.6s;
+  transform: scale(1);
+  opacity: 1;
+  border-radius: 0;
+}
+@media(max-width:1024px) { .swiperSlide:hover .hoverBlock::before { height:300px; } }
+@media(max-width:767px) { .swiperSlide:hover .hoverBlock::before { height:200px; } }
+
+.swiperSlide:hover .badgeDate {
+  background: #000; color: #fff; transition-delay: 0.6s;
+}
+.swiperSlide:hover .slideInfo,
+.swiperSlide:hover .slideTitle {
+  color: #000; transition-delay: 0.6s;
+}
+
+/* Badge colors (Hily has alternating colors) */
+.badgeDate {
+  display: inline-flex; align-items: center;
+  padding: 0 16px; height: 32px; border-radius: 16px;
+  font-size: 14px; font-weight: 500; text-align: center;
+  margin-bottom: 16px;
+  transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  transition-delay: 0s;
+}
+@media(max-width:767px) { .badgeDate { height:21px; padding:0 8px; font-size:12px; line-height:1em; margin-bottom:10px; } }
+
+.blue .badgeDate { background: #beefff; color: #000; }
+.black .badgeDate { background: #000; color: #fff; }
+.pink .badgeDate { background: #e37dd3; color: #fff; }
+
+.slideTitle {
+  display: flex;
+  font-size: 64px; font-weight: 800; line-height: 64px;
+  text-align: left; color: #fff; margin-bottom: 16px;
+  transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  transition-delay: 0s;
+}
+@media(max-width:1024px) { .slideTitle { font-size:50px; line-height:1em; } }
+@media(max-width:767px) { .slideTitle { font-size:32px; margin-bottom:10px; } }
+
+.slideInfo {
+  display: block;
+  font-size: 24px; font-weight: 400; line-height: 36px;
+  text-align: left; color: #fff;
+  transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  transition-delay: 0.6s;
+}
+@media(max-width:1024px) { .slideInfo { font-size:20px; line-height:1.2em; } }
+@media(max-width:767px) { .slideInfo { font-size:16px; line-height:1em; } }

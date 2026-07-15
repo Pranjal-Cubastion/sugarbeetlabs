@@ -1,0 +1,162 @@
+/* Exact Hily Section 2 */
+.section2 { overflow: hidden; background: #fff; }
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 1050px;
+  align-items: center;
+  padding: 150px 50px;
+}
+@media(max-width:1680px) { .wrapper { max-width:1400px; min-height:850px; } }
+@media(max-width:1440px) { .wrapper { padding:150px 50px; } }
+@media(max-width:1199px) { .wrapper { flex-wrap:wrap; margin:0 24px; padding:48px 0 50px; } }
+@media(max-width:767px)  { .wrapper { min-height:auto; } }
+
+/* LEFT */
+.leftBlock {
+  flex: 0 470px; width:470px;
+  display:flex; flex-direction:column; justify-content:center;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.visible.leftBlock, .visible .leftBlock { opacity:1; transform:translateY(0); }
+.leftBlock.visible { opacity:1; transform:translateY(0); }
+@media(max-width:1280px) { .leftBlock { flex:0 400px; width:400px; } }
+@media(max-width:1199px) { .leftBlock { flex:0 100%; width:100%; } }
+
+.mainTitle {
+  display:block;
+  font-size:64px; font-weight:800; line-height:64px;
+  margin-bottom:45px; margin-top:0;
+}
+@media(max-width:1280px) { .mainTitle { font-size:58px; } }
+@media(max-width:1199px) { .mainTitle { text-align:center; font-size:50px; line-height:1em; } }
+@media(max-width:767px)  { .mainTitle { font-size:42px; text-align:left; margin-bottom:24px; max-width:300px; } }
+
+/* "Hey, I Like You!" in orange-red — exact Hily */
+.mainTitle b { color: #ea502b; }
+
+.leftBlock p {
+  margin:0; font-size:24px; font-weight:400; line-height:36px;
+  text-align:left; margin-bottom:40px;
+}
+@media(max-width:1280px) { .leftBlock p { font-size:22px; line-height:1.2em; } }
+@media(max-width:1199px) { .leftBlock p { text-align:center; } }
+@media(max-width:767px)  { .leftBlock p { font-size:20px; line-height:30px; margin-bottom:20px; text-align:left; } }
+.leftBlock p:last-of-type { margin-bottom:0; }
+
+/* RIGHT — vertical swiper */
+.rightBlock {
+  position: relative;
+  margin-left: 50px;
+  flex: 0 550px; width:550px;
+  display:flex; align-items:center;
+}
+@media(max-width:1680px) { .rightBlock { width:400px; flex:0 400px; } }
+@media(max-width:1199px) {
+  .rightBlock {
+    flex:0 100%; width:100%;
+    height:300px; display:block;
+    max-width:700px; margin:22px auto 0;
+  }
+}
+@media(max-width:767px) { .rightBlock { height:300px; } }
+
+.swiperContainer {
+  position: relative;
+  z-index: 1;
+  display:flex; align-items:center; justify-content:flex-end;
+  width:100%; overflow:visible;
+}
+
+/* Decorative blob — one SVG per stat, sits to the LEFT of the active number */
+.blob {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: calc(100% + 40px);
+  width: clamp(180px, 18vw, 300px);
+  height: clamp(180px, 18vw, 300px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.4) rotate(-12deg);
+  transform-origin: center;
+  transition: opacity 0.55s var(--ease-hily), transform 0.6s var(--ease-hily);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+.blobActive {
+  opacity: 1;
+  transform: translateY(-50%) scale(1) rotate(0deg);
+}
+@media(max-width:1199px) {
+  .blob { display: none; }
+  .swiperContainer { justify-content:flex-start; }
+}
+
+.swiperWrapper {
+  display:flex; flex-direction:column;
+  align-items:flex-end; justify-content:flex-end;
+  width:550px; gap:0;
+}
+@media(max-width:1280px) { .swiperWrapper { width:450px; } }
+@media(max-width:1199px) { .swiperWrapper { width:100%; } }
+
+/* Individual stat slide (rendered as a <button> for keyboard access) */
+.swiperSlide {
+  width:auto;
+  padding:10px 0;
+  cursor:pointer;
+  transition: all 0.5s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  position:relative;
+  /* neutralise native button chrome so it matches the original div */
+  appearance:none; -webkit-appearance:none;
+  background:none; border:none;
+  color:inherit; font:inherit; text-align:right;
+}
+@media(max-width:1199px) { .swiperSlide { width:auto; } }
+
+/* Active slide — BIG */
+.swiperSlideActive {
+  margin: 26px 0;
+}
+@media(max-width:1199px) { .swiperSlideActive { margin:14px 0; } }
+
+.swiperSlideActive .title {
+  font-size:156px; line-height:1em; opacity:1;
+}
+@media(max-width:1680px) { .swiperSlideActive .title { font-size:140px; } }
+@media(max-width:1280px) { .swiperSlideActive .title { font-size:130px; } }
+@media(max-width:1199px) { .swiperSlideActive .title { font-size:70px; } }
+
+.swiperSlideActive .title b {
+  font-size:42px; line-height:1em; margin-top:0; opacity:1;
+}
+@media(max-width:1199px) { .swiperSlideActive .title b { font-size:32px; } }
+
+/* Stat title */
+.title {
+  position: relative;
+  z-index: 1;
+  display:block;
+  font-size:64px; font-weight:800; line-height:0.92;
+  text-align:right;
+  white-space:nowrap;
+  transition:all 0.5s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+  opacity:0.2;
+}
+@media(max-width:1199px) { .title { font-size:70px; line-height:1em; } }
+
+.title b {
+  display:block;
+  font-size:24px; font-weight:400; line-height:1.1;
+  text-align:left; margin-top:6px; opacity:0.6;
+  transition:all 0.5s cubic-bezier(0.21, 0.68, 0.41, 0.83);
+}
+@media(max-width:1024px) { .title b { font-size:32px; line-height:1em; } }

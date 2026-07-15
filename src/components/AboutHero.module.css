@@ -1,0 +1,70 @@
+/* About hero — big headline + full-bleed reveal image */
+.hero {
+  background: #fff;
+  padding-top: 150px;
+  overflow: hidden;
+}
+@media (max-width: 767px) { .hero { padding-top: 96px; } }
+
+.h1 {
+  max-width: 1720px;
+  margin: 0 auto 44px;
+  padding: 0 50px;
+  color: #000;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 0.88;
+}
+@media (max-width: 767px) { .h1 { padding: 0 20px; margin-bottom: 28px; } }
+
+.line1,
+.line2 {
+  display: block;
+  opacity: 0;
+  transform: translateY(46px);
+  animation: heroUp 0.85s var(--ease-hily) forwards;
+}
+.line1 {
+  font-size: clamp(42px, 9.2vw, 132px);
+  animation-delay: 0.08s;
+}
+.line2 {
+  font-size: clamp(50px, 11.6vw, 172px);
+  animation-delay: 0.22s;
+}
+
+@keyframes heroUp {
+  to { opacity: 1; transform: none; }
+}
+
+/* Full-bleed image with a wipe-down reveal + slow zoom */
+.imageWrap {
+  position: relative;
+  width: 100%;
+  height: clamp(300px, 42vw, 620px);
+  overflow: hidden;
+  clip-path: inset(0 0 100% 0);
+  animation: heroWipe 1.05s var(--ease-hily) 0.4s forwards;
+}
+.image {
+  object-fit: cover;
+  object-position: center 34%;
+  transform: scale(1.12);
+  animation: heroZoom 1.6s var(--ease-hily) 0.4s forwards;
+}
+
+@keyframes heroWipe {
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes heroZoom {
+  to { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line1, .line2, .imageWrap, .image {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+}

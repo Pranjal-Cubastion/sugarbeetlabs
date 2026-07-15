@@ -1,0 +1,81 @@
+/* ===== Contact hero — photo left, form card right ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  background: #16241f;
+  overflow: hidden;
+}
+
+.bg { position: absolute; inset: 0; z-index: 0; }
+.bgImg { object-fit: cover; object-position: center 30%; }
+
+/* Darken top (for the navbar) and left (for the headline) */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(8, 12, 16, 0.7) 0%, rgba(8, 12, 16, 0.35) 42%, rgba(8, 12, 16, 0.05) 66%),
+    linear-gradient(180deg, rgba(8, 12, 16, 0.55) 0%, rgba(8, 12, 16, 0.1) 22%, rgba(8, 12, 16, 0.15) 100%);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 150px 50px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+@media (max-width: 1100px) {
+  .inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 120px 24px 60px;
+    gap: 40px;
+  }
+}
+@media (max-width: 767px) { .inner { padding: 100px 18px 50px; } }
+
+/* Left — headline */
+.left { flex: 1 1 auto; max-width: 780px; }
+@media (max-width: 1100px) { .left { max-width: none; } }
+
+.h1 {
+  margin: 0;
+  font-size: clamp(60px, 10vw, 150px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(38px);
+  animation: heroUp 0.85s var(--ease-hily) 0.1s forwards;
+}
+.tagline {
+  margin: 22px 0 0;
+  font-size: clamp(21px, 2.5vw, 38px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(38px);
+  animation: heroUp 0.85s var(--ease-hily) 0.24s forwards;
+}
+@media (max-width: 767px) { .tagline { font-size: 22px; } }
+
+@keyframes heroUp { to { opacity: 1; transform: none; } }
+
+/* Right — form card */
+.right { flex: 0 0 auto; width: 500px; }
+@media (max-width: 1100px) { .right { width: 100%; display: flex; justify-content: center; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .h1, .tagline { animation: none; opacity: 1; transform: none; }
+}
