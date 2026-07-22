@@ -37,7 +37,7 @@ export default function FeaturesSection() {
     <section className="bg-[#9677ff] py-[100px] lg:py-[150px] overflow-hidden" id="features" aria-label="SugarBeet features">
       <div className="max-w-[1600px] mx-auto  flex flex-col gap-12 lg:gap-20">
 
-        <h2 className="text-white font-[900] px-8 lg:px-[100px] tracking-[-0.02em] leading-[0.96] text-[clamp(45px,8vw,80px)] lg:text-[130px] lg:leading-[117px] m-0">
+        <h2 className="text-white font-[900] px-8 lg:px-[100px]gi tracking-[-0.02em] leading-[0.96] text-[clamp(45px,8vw,80px)] lg:text-[130px] lg:leading-[117px] m-0">
           Easy and Safe <br />Features of <br /><b className="text-black">SugarBeet Dating App</b>
         </h2>
 
