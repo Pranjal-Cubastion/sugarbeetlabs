@@ -4,17 +4,13 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
-  min-height: 1050px;
   align-items: center;
-  padding: 150px 50px;
+  padding: 96px 50px;
 }
-@media(max-width:1680px) { .wrapper { max-width:1400px; min-height:850px; } }
-@media(max-width:1440px) { .wrapper { padding:150px 50px; } }
-@media(max-width:1199px) { .wrapper { flex-wrap:wrap; margin:0 24px; padding:48px 0 50px; } }
-@media(max-width:767px)  { .wrapper { min-height:auto; } }
+@media(max-width:1199px) { .wrapper { flex-wrap:wrap; margin:0; padding:56px 20px; } }
 
 /* LEFT */
 .leftBlock {
@@ -32,17 +28,19 @@
   display:block;
   font-size:64px; font-weight:800; line-height:64px;
   margin-bottom:45px; margin-top:0;
+  color:#141414;
 }
 @media(max-width:1280px) { .mainTitle { font-size:58px; } }
 @media(max-width:1199px) { .mainTitle { text-align:center; font-size:50px; line-height:1em; } }
 @media(max-width:767px)  { .mainTitle { font-size:42px; text-align:left; margin-bottom:24px; max-width:300px; } }
 
-/* "Hey, I Like You!" in orange-red — exact Hily */
-.mainTitle b { color: #ea502b; }
+/* Brand accent — Beet Red */
+.mainTitle b { color: #B20051; }
 
 .leftBlock p {
   margin:0; font-size:24px; font-weight:400; line-height:36px;
   text-align:left; margin-bottom:40px;
+  color:rgba(20,20,20,0.8);
 }
 @media(max-width:1280px) { .leftBlock p { font-size:22px; line-height:1.2em; } }
 @media(max-width:1199px) { .leftBlock p { text-align:center; } }
@@ -148,6 +146,7 @@
   font-size:64px; font-weight:800; line-height:0.92;
   text-align:right;
   white-space:nowrap;
+  color:#141414;
   transition:all 0.5s cubic-bezier(0.21, 0.68, 0.41, 0.83);
   opacity:0.2;
 }

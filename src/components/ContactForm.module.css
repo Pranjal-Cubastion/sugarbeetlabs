@@ -42,7 +42,7 @@
 .select:focus {
   outline: none;
   background: #fff;
-  border-color: #a182ff;
+  border-color: #141414;
   box-shadow: 0 0 0 4px rgba(161, 130, 255, 0.16);
 }
 
@@ -78,7 +78,7 @@
 
 /* Inline validation */
 .inputError {
-  border-color: #ea502b;
+  border-color: #B20051;
   background: #fff;
 }
 .error {
@@ -86,7 +86,7 @@
   margin: 7px 0 0 24px;
   font-size: 13px;
   font-weight: 600;
-  color: #ea502b;
+  color: #B20051;
 }
 
 /* Privacy note */
@@ -98,7 +98,7 @@
   line-height: 1.45;
   color: #6d6880;
 }
-.privacy a { color: #8b6cf0; text-decoration: none; }
+.privacy a { color: #B20051; text-decoration: none; }
 .privacy a:hover { text-decoration: underline; }
 
 /* ===== reCAPTCHA replica ===== */
@@ -116,7 +116,7 @@
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-.captchaError { border-color: #ea502b; }
+.captchaError { border-color: #B20051; }
 
 .captchaBox {
   flex: 0 0 auto;
@@ -224,7 +224,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: #a182ff;
+  background: #B20051;
   border-radius: 32px;
   transform: translateY(100%) scale(0.6);
   opacity: 0;
@@ -264,7 +264,7 @@
   height: 84px;
   margin-bottom: 26px;
   border-radius: 50%;
-  background: #a182ff;
+  background: #B20051;
   animation: popIn 0.5s var(--ease-hily);
 }
 .successMark::after {

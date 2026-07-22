@@ -3,12 +3,12 @@
 /* Hero — white, huge type */
 .hero {
   background: #fff;
-  padding: clamp(120px, 16vh, 180px) 50px clamp(60px, 8vh, 110px);
+  padding: 150px 50px 96px;
 }
-@media (max-width: 767px) { .hero { padding: 100px 20px 60px; } }
+@media (max-width: 767px) { .hero { padding: 104px 20px 56px; } }
 
 .heroInner {
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -28,7 +28,7 @@
 }
 .h1 span:nth-child(1) { animation-delay: 0.08s; }
 .h1 span:nth-child(2) { animation-delay: 0.22s; }
-.h1 b { color: #ea502b; }
+.h1 b { color: #B20051; }
 
 .lead {
   max-width: 760px;
@@ -72,7 +72,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: #a182ff;
+  background: #B20051;
   border-radius: 40px;
   transform: translateY(100%) scale(0.6);
   opacity: 0;
@@ -87,27 +87,34 @@
 
 /* ===== Where your 1% goes — purple band ===== */
 .causes {
-  background: #9677ff;
-  padding: clamp(70px, 9vw, 150px) 50px;
+  background: #fff;
+  padding: 96px 50px;
 }
-@media (max-width: 767px) { .causes { padding: 70px 20px; } }
+@media (max-width: 767px) { .causes { padding: 56px 20px; } }
 
-.causesInner { max-width: 1600px; margin: 0 auto; }
+.causesInner {
+  max-width: 1300px;
+  margin: 0 auto;
+  background: #FFB5D0;
+  border-radius: 32px;
+  padding: 64px 56px;
+}
+@media (max-width: 767px) { .causesInner { border-radius: 24px; padding: 40px 24px; } }
 
 .causesTitle {
-  margin: 0 0 clamp(50px, 6vw, 96px);
+  margin: 0 0 clamp(36px, 4vw, 64px);
   max-width: 1100px;
-  font-size: clamp(48px, 8vw, 122px);
+  font-size: clamp(40px, 6vw, 92px);
   font-weight: 800;
   line-height: 0.92;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: #141414;
   opacity: 0;
   transform: translateY(32px);
   transition: opacity 0.8s var(--ease-hily), transform 0.8s var(--ease-hily);
 }
 .visible .causesTitle { opacity: 1; transform: none; }
-.causesTitle b { color: #000; }
+.causesTitle b { color: #B20051; }
 
 .causesGrid {
   display: grid;
@@ -128,7 +135,7 @@
   font-size: clamp(72px, 8vw, 120px);
   font-weight: 800;
   line-height: 0.78;
-  color: #fff;
+  color: #B20051;
   opacity: 0;
   transform: scale(0.4) rotate(-10deg);
   transform-origin: left center;
@@ -142,7 +149,7 @@
   font-size: clamp(22px, 1.9vw, 34px);
   font-weight: 800;
   line-height: 1.08;
-  color: #000;
+  color: #141414;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s var(--ease-hily), transform 0.6s var(--ease-hily);
@@ -159,16 +166,16 @@
 /* ===== The pledge in action ===== */
 .impact {
   background: #fff;
-  padding: clamp(70px, 9vw, 150px) 50px clamp(60px, 8vw, 110px);
+  padding: 96px 50px;
 }
-@media (max-width: 767px) { .impact { padding: 60px 20px 50px; } }
+@media (max-width: 767px) { .impact { padding: 56px 20px; } }
 
 .impactInner {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: clamp(40px, 6vw, 110px);
   align-items: center;
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 @media (max-width: 900px) { .impactInner { grid-template-columns: 1fr; gap: 40px; } }
@@ -188,7 +195,7 @@
   letter-spacing: -0.02em;
   color: #000;
 }
-.impactTitle b { color: #9677ff; }
+.impactTitle b { color: #B20051; }
 
 .impactText p {
   margin: 0 0 24px;
@@ -256,12 +263,12 @@
 .cardList i {
   font-style: normal;
   font-weight: 800;
-  color: #a182ff;
+  color: #FFB5D0;
 }
 
 /* Giant CTA */
 .ctaWrap {
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
   padding-top: clamp(70px, 10vw, 140px);
 }
@@ -298,7 +305,7 @@
   right: 0;
   height: 0;
   z-index: -1;
-  background: #e37dd3;
+  background: #B20051;
   border-radius: 80% 80% 0 0;
   transform: scale(0.8);
   transition: all 0.45s var(--ease-hily);

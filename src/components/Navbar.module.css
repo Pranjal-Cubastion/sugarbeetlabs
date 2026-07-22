@@ -115,7 +115,7 @@
 }
 .navLink a::before {
   position:absolute; bottom:-6px; left:0; right:0;
-  content:''; height:4px; background: #a182ff;
+  content:''; height:4px; background: #B20051;
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.21, 0.68, 0.41, 0.83);
   opacity:0; transform:scale(0.8);
@@ -170,7 +170,7 @@
   z-index:-1; border-radius:100%; transform:translateY(150%); content:'';
 }
 .dwnButton:hover::before,.dwnButton:hover::after { transform:translateY(0) scale(4); }
-.home .dwnButton::before,.home .dwnButton::after { background:#a182ff; }
+.home .dwnButton::before,.home .dwnButton::after { background:#B20051; }
 
 /* Icons in button — inline SVGs, inherit the button's text color */
 .appleI,.googleI,.arrow {
@@ -213,7 +213,7 @@
   transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
   text-decoration:none;
 }
-.title:hover { background:#a182ff; }
+.title:hover { background:#B20051; }
 .qrCode { width:80px; height:80px; margin:0 auto; }
 .qrPlaceholder { width:100%; height:100%; background:#f0f0f0; border-radius:8px; }
 .bottomBlock {

@@ -3,12 +3,12 @@
 /* Hero — white, huge type */
 .hero {
   background: #fff;
-  padding: clamp(120px, 16vh, 180px) 50px clamp(60px, 8vh, 110px);
+  padding: 150px 50px 96px;
 }
-@media (max-width: 767px) { .hero { padding: 100px 20px 60px; } }
+@media (max-width: 767px) { .hero { padding: 104px 20px 56px; } }
 
 .heroInner {
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -28,7 +28,7 @@
 }
 .h1 span:nth-child(1) { animation-delay: 0.08s; }
 .h1 span:nth-child(2) { animation-delay: 0.22s; }
-.h1 b { color: #9677ff; }
+.h1 b { color: #B20051; }
 
 .lead {
   max-width: 720px;
@@ -48,19 +48,23 @@
 
 /* ===== Featured partner — dark band ===== */
 .dark {
-  background: #000;
-  padding: clamp(70px, 9vw, 150px) 50px;
+  background: #fff;
+  padding: 96px 50px;
 }
-@media (max-width: 767px) { .dark { padding: 60px 20px; } }
+@media (max-width: 767px) { .dark { padding: 56px 20px; } }
 
 .inner {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: clamp(40px, 5vw, 90px);
   align-items: center;
-  max-width: 1600px;
+  max-width: 1300px;
   margin: 0 auto;
+  background: #141414;
+  border-radius: 32px;
+  padding: 64px 56px;
 }
+@media (max-width: 767px) { .inner { border-radius: 24px; padding: 40px 24px; } }
 @media (max-width: 900px) { .inner { grid-template-columns: 1fr; gap: 46px; } }
 
 /* Left — logo + description */
@@ -120,7 +124,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: #a182ff;
+  background: #B20051;
   border-radius: 40px;
   transform: translateY(100%) scale(0.6);
   opacity: 0;
@@ -198,16 +202,16 @@
 /* ===== Become a partner — CTA ===== */
 .ctaSection {
   background: #fff;
-  padding: clamp(70px, 9vw, 140px) 50px clamp(60px, 8vw, 110px);
+  padding: 96px 50px;
 }
-@media (max-width: 767px) { .ctaSection { padding: 60px 20px 50px; } }
+@media (max-width: 767px) { .ctaSection { padding: 56px 20px; } }
 
 .buttonDwn {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
   height: clamp(180px, 20vw, 300px);
   border-radius: 80px;
@@ -235,7 +239,7 @@
   right: 0;
   height: 0;
   z-index: -1;
-  background: #e37dd3;
+  background: #B20051;
   border-radius: 80% 80% 0 0;
   transform: scale(0.8);
   transition: all 0.45s var(--ease-hily);

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none" role="img" aria-label="Image placeholder">
+  <rect width="1600" height="900" fill="#EFEFF1"/>
+  <g stroke="#B9B9C0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <rect x="640" y="352" width="320" height="220" rx="20"/>
+    <circle cx="722" cy="424" r="26"/>
+    <path d="M660 546l104-104 78 78 52-46 86 72"/>
+  </g>
+  <text x="800" y="660" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="46" font-weight="600" fill="#9A9AA3">16:9 placeholder</text>
+</svg>

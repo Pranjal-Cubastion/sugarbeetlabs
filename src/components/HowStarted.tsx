@@ -24,9 +24,6 @@ export default function HowStarted() {
             <span>SugarBeet</span>
             <span>Started</span>
           </h2>
-          <span className={styles.blobWrap} aria-hidden="true">
-            <i className={styles.blob} />
-          </span>
         </div>
 
         <div className={styles.rightBlock}>
