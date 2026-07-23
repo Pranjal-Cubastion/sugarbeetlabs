@@ -209,7 +209,7 @@
   padding: 0 40px;
   border: none;
   border-radius: 32px;
-  background: #000;
+  background: #141414;
   color: #fff;
   font-family: inherit;
   font-size: 19px;
@@ -230,7 +230,7 @@
   opacity: 0;
   transition: all 0.5s var(--ease-hily);
 }
-.sendBtn:hover:not(:disabled) { color: #000; }
+.sendBtn:hover:not(:disabled) { color: #141414; }
 .sendBtn:hover:not(:disabled)::after {
   transform: translateY(0) scale(1.6);
   opacity: 1;

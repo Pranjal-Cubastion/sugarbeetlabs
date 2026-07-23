@@ -63,17 +63,17 @@ export default function StatsSection() {
         {/* Left block */}
         <div className={`${styles.leftBlock} ${visible ? styles.visible : ""}`}>
           <h2 className={styles.mainTitle}>
-            Dating for<br />
-            <b>plant-based hearts</b>
+            The Plant-Powered<br />
+            <b>Connection App</b>
           </h2>
           <p>
-            <span>Yep, this simple — because why complicate </span>
-            <span>dating? Other dating apps may promise you perfect matches overnight. Instead, SugarBeet lets you be truly yourself and enjoy dating as you are.</span>
+            <span>Find dates, friends, or even community collaborators who </span>
+            <span>share your plant-based lifestyle and values. Sugarbeet isn&rsquo;t just another generic dating app — it&rsquo;s a community of conscious eaters and ethical partners.</span>
           </p>
           <p>
-            <span>Keep it real — join our dating community where your </span>
-            <span>authenticity</span>
-            <span> is all that matters.</span>
+            <span>Here, your </span>
+            <span>lifestyle</span>
+            <span> matters.</span>
           </p>
         </div>
 

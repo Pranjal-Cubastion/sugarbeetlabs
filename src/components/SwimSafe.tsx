@@ -22,9 +22,11 @@ export default function SwimSafe() {
     >
       <div className={styles.topTitle}>
         <span className={styles.mainTitle}>
-          A safe place
+          A safe
           <br />
-          <b>to be yourself</b>
+          place to
+          <br />
+          be <b>yourself</b>
         </span>
         <span className={styles.mainInfo}>
           Dating should feel good and safe. We work hard behind the scenes — so

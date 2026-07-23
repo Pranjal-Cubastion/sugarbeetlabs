@@ -8,34 +8,34 @@ const EASE = [0.21, 0.68, 0.41, 0.83] as const;
 const FEATURES = [
   {
     img: "/bumble-date.webp",
-    title: "Compatibility Matches",
-    info: "They love dogs, you love cats — will it work?",
-    alt: "Compatibility Matches illustration",
+    title: "Value-based Matches",
+    info: "Express who you are — connect with like-minded people who understand your lifestyle — eliminating awkward filters and guesswork.",
+    alt: "Value-based Matches illustration",
     link: "Find your match",
     bg: "#FFB5D0", // First Pink
   },
   {
     img: "/bumble-date.webp",
-    title: "Safety Checks for Secure Dating",
-    info: "To keep scammers, spammers, and other bummers away",
-    alt: "Safety Checks illustration",
-    link: "Stay safe out there",
-    bg: "#7C92BF", // Wild Blue Yonder
-  },
-  {
-    img: "/bumble-date.webp",
-    title: "Icebreakers to Start Conversations",
-    info: "You don't need a polar bear to break the ice!",
-    alt: "Icebreakers illustration",
-    link: "Break the ice",
+    title: "Zodiac Compatibility",
+    info: "Connect with people based on zodiac compatibility. Explore astrological insights, discover compatible matches, and find meaningful connections written in the stars.",
+    alt: "Zodiac Compatibility illustration",
+    link: "Align with the stars",
     bg: "#D9B8D9", // Thistle
   },
   {
     img: "/bumble-date.webp",
-    title: "Data-Backed Dating Tips",
-    info: "Data-backed ideas for your online dating app profile",
-    alt: "Dating Tips illustration",
-    link: "Get the tips",
+    title: "Rallies",
+    info: "Engage in meaningful conversations, discover vegan events near you, and build authentic connections.",
+    alt: "Rallies illustration",
+    link: "Join events",
+    bg: "#7C92BF", // Wild Blue Yonder
+  },
+  {
+    img: "/bumble-date.webp",
+    title: "Safe, Verified & Private",
+    info: "Every member is verified before joining. No fake accounts. Screenshot and screen recording protection helps keep your conversations private.",
+    alt: "Safe, Verified & Private illustration",
+    link: "Stay safe out there",
     bg: "#6B8372", // Wild Beet Leaf
   },
 ];
@@ -57,8 +57,8 @@ export default function FeaturesSection() {
           transition={{ duration: 0.7, ease: EASE }}
           className="m-0 mb-[40px] max-w-[1250px] text-[40px] font-extrabold leading-[0.98] tracking-[-0.02em] text-[#141414] md:mb-[64px] md:text-[clamp(56px,5.4vw,104px)]"
         >
-          Easy and Safe Features of{" "}
-          <b className="font-extrabold text-[#B20051]">SugarBeet Dating App</b>
+          Built for{" "}
+          <b className="font-extrabold text-[#B20051]">Meaningful Connections</b>
         </motion.h2>
 
         {/* Bumble-style feature cards — 2×2 grid */}

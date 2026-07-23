@@ -6,42 +6,48 @@
 @media (max-width: 767px) { .section { padding: 56px 20px; } }
 
 .topTitle {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 60px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  column-gap: clamp(32px, 5vw, 90px);
   max-width: 1300px;
   margin: 0 auto clamp(50px, 6vw, 96px);
 }
-@media (max-width: 900px) { .topTitle { flex-direction: column; align-items: flex-start; gap: 24px; } }
+@media (max-width: 900px) {
+  .topTitle {
+    grid-template-columns: 1fr;
+    align-items: start;
+    row-gap: 24px;
+  }
+}
 
 .mainTitle {
-  flex: 0 1 auto;
-  font-size: clamp(56px, 9vw, 158px);
-  font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  color: #B20051;
+  font-family: var(--font-body, system-ui, -apple-system, "Segoe UI", sans-serif);
+  font-size: clamp(56px, 9vw, 168px);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+  color: #141414;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s var(--ease-hily), transform 0.8s var(--ease-hily);
 }
 .visible .mainTitle { opacity: 1; transform: none; }
-.mainTitle b { color: #B20051; font-weight: 800; }
+.mainTitle b { color: #B20051; font-weight: 900; }
 
 .mainInfo {
-  flex: 0 1 620px;
-  padding-bottom: clamp(4px, 1vh, 14px);
+  max-width: 620px;
+  padding-bottom: clamp(6px, 1.2vh, 18px);
+  font-family: var(--font-body, system-ui, -apple-system, "Segoe UI", sans-serif);
   font-size: clamp(20px, 1.75vw, 31px);
-  font-weight: 700;
-  line-height: 1.25;
-  color: #000;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #141414;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s var(--ease-hily) 0.15s, transform 0.8s var(--ease-hily) 0.15s;
 }
 .visible .mainInfo { opacity: 1; transform: none; }
-@media (max-width: 900px) { .mainInfo { flex: 1 1 auto; } }
 
 /* Icon grid */
 .grid {
@@ -83,7 +89,7 @@
   font-size: clamp(22px, 2vw, 38px);
   font-weight: 800;
   line-height: 1.1;
-  color: #000;
+  color: #141414;
 }
 
 /* ===== Giant "Try SugarBeet now" button ===== */
@@ -96,7 +102,7 @@
   margin: 0 auto;
   height: clamp(180px, 20vw, 300px);
   border-radius: 80px;
-  background: #000;
+  background: #141414;
   color: #fff;
   font-size: clamp(34px, 5vw, 64px);
   font-weight: 800;

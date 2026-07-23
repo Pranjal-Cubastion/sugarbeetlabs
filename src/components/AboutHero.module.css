@@ -10,10 +10,12 @@
   max-width: 1400px;
   margin: 0 auto 44px;
   padding: 0 50px;
-  color: #000;
+  color: #141414;
   font-weight: 800;
   letter-spacing: -0.025em;
-  line-height: 0.88;
+  line-height: 0.9;
+  overflow-wrap: break-word;
+  hyphens: manual;
 }
 @media (max-width: 767px) { .h1 { padding: 0 20px; margin-bottom: 28px; } }
 
@@ -25,11 +27,11 @@
   animation: heroUp 0.85s var(--ease-hily) forwards;
 }
 .line1 {
-  font-size: clamp(42px, 9.2vw, 132px);
+  font-size: clamp(38px, 7vw, 104px);
   animation-delay: 0.08s;
 }
 .line2 {
-  font-size: clamp(50px, 11.6vw, 172px);
+  font-size: clamp(40px, 7.6vw, 116px);
   animation-delay: 0.22s;
 }
 

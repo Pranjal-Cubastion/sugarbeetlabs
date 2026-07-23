@@ -54,7 +54,7 @@ export default function WaitlistSection() {
           className="group relative z-[1] flex h-[200px] w-full items-center justify-center overflow-hidden rounded-[32px] bg-[#141414] px-6 text-center text-[clamp(30px,4.4vw,60px)] font-extrabold leading-[1.05] text-white md:h-[280px]"
         >
           <span className="relative z-[1]">
-            SugarBeet dating app coming SOON
+            The beet drops SOON
           </span>
           <span
             aria-hidden="true"
@@ -74,11 +74,12 @@ export default function WaitlistSection() {
           {/* Left — copy + form */}
           <div className="flex flex-col justify-center px-[24px] py-[48px] md:px-[56px] md:py-[64px]">
             <h2 className="m-0 text-[42px] font-extrabold leading-[0.98] tracking-[-0.02em] text-white md:text-[clamp(52px,4.4vw,76px)]">
-              Join the waitlist
+              Join the beet-list
             </h2>
             <p className="m-0 mt-[16px] max-w-[460px] text-[17px] font-normal leading-snug text-white/80 md:text-[20px]">
-              SugarBeet isn&rsquo;t live just yet. Drop your email and we&rsquo;ll
-              let you know the moment the app lands — no spam, just the launch.
+              Sugarbeet isn&rsquo;t live yet, but we&rsquo;re planting the seeds.
+              Join the waitlist and be the first to know when we bloom. No spam,
+              just fresh launch updates.
             </p>
 
             {status === "done" ? (

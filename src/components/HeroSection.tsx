@@ -7,7 +7,7 @@ export default function HeroSection() {
     <section
       className={styles.hero}
       id="home"
-      aria-label="SugarBeet — Date as you are"
+      aria-label="SugarBeet — Rooted in Compassion"
     >
       {/* Full-bleed background photo */}
       <div className={styles.bg}>
@@ -29,10 +29,13 @@ export default function HeroSection() {
       <div className={styles.inner}>
         <div className={styles.content}>
           <h1 className={styles.h1}>
-            <span>Date as</span>
-            <span>you are</span>
+            <span>Rooted in</span>
+            <span>Compassion</span>
           </h1>
-          <p className={styles.tagline}>Stay YOU. Connect MORE</p>
+          <p className={styles.tagline}>
+            Connect with people who care about animals, the planet, and each
+            other.
+          </p>
           <a
             href="#download"
             className={styles.cta}

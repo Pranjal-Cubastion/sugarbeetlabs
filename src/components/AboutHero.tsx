@@ -7,7 +7,7 @@ export default function AboutHero() {
     <section className={styles.hero} aria-label="About SugarBeet">
       <h1 className={styles.h1}>
         <span className={styles.line1}>Come as you are</span>
-        <span className={styles.line2}>Grow something real</span>
+        <span className={styles.line2}>Let&rsquo;s grow something beet-ter together</span>
       </h1>
       <div className={styles.imageWrap}>
         <Image

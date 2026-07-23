@@ -3,8 +3,8 @@ import { useReveal } from "./useReveal";
 import styles from "./HowStarted.module.css";
 
 const REASONS = [
-  { n: "1", t: "43M+ plant-based people already in" },
-  { n: "2", t: "Plenty of them are right near you" },
+  { n: "1", t: "People who share your values" },
+  { n: "2", t: "Find events nearby" },
   { n: "3", t: "Real, warm, and rooted like you" },
 ];
 
@@ -28,14 +28,22 @@ export default function HowStarted() {
 
         <div className={styles.rightBlock}>
           <p>
-            SugarBeet began with a simple frustration: the people who lead with
-            kindness deserve an easier way to find each other. Endless swiping
-            felt hollow, and the values that matter most never made it past the
-            first photo. So we built a place where plant-based hearts lead with
-            what they believe — and let real connection do the rest.
+            Sugarbeet started with a simple idea: the people who lead with
+            compassion deserve a better way to find each other. Traditional
+            dating apps often focus on the first photo, but we believe true
+            connection grows from shared values, interests, and the way you see
+            the world.
           </p>
           <p>
-            That&rsquo;s how <strong>SugarBeet</strong> was born.
+            So we created a community where plant-based hearts can connect
+            through meaningful conversations, zodiac compatibility, shared
+            passions, and real-life events that bring people together beyond the
+            screen. Whether you&rsquo;re looking for love, friendship, or a
+            community that feels like home, Sugarbeet helps you find connections
+            that naturally bloom.
+          </p>
+          <p>
+            That&rsquo;s how <strong>Sugarbeet</strong> took root.
           </p>
           <p>
             <a className={styles.tryBtn} href="/#download">

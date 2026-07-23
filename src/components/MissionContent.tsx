@@ -67,7 +67,7 @@ export default function MissionContent() {
         <div className={styles.impactInner}>
           <div className={styles.impactText}>
             <h2 className={styles.impactTitle}>
-              Join SugarBeet, grow <b>good</b>
+              Join Sugarbeet, rooted in <b>love</b>
             </h2>
             <p>
               When you join SugarBeet, you&rsquo;re not just finding your

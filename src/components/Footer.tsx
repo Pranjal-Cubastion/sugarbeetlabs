@@ -23,8 +23,9 @@ const COLS = [
   {
     heading: "Learn more",
     links: [
-      { label: "Blog", href: "/#blog" },
-      { label: "Press center", href: "/#blog" },
+      { label: "Labs", href: "/labs" },
+      { label: "Blog", href: "/labs" },
+      { label: "Press center", href: "/labs" },
       { label: "FAQ", href: "#" },
     ],
   },
