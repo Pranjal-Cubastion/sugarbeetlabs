@@ -14,10 +14,10 @@ const COLS = [
   {
     heading: "Helpful tools",
     links: [
-      { label: "Safety", href: "/about#safety" },
-      { label: "Guidelines", href: "#" },
-      { label: "T&Cs", href: "#" },
-      { label: "Privacy", href: "#" },
+      { label: "Safety", href: "/safety" },
+      { label: "Guidelines", href: "/guidelines" },
+      { label: "T&Cs", href: "/tcs" },
+      { label: "Privacy", href: "/privacy" },
     ],
   },
   {
@@ -26,7 +26,7 @@ const COLS = [
       { label: "Labs", href: "/labs" },
       { label: "Blog", href: "/labs" },
       { label: "Press center", href: "/labs" },
-      { label: "FAQ", href: "#" },
+      { label: "FAQ", href: "/faq" },
     ],
   },
 ];
