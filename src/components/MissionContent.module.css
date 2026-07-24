@@ -28,7 +28,7 @@
 }
 .h1 span:nth-child(1) { animation-delay: 0.08s; }
 .h1 span:nth-child(2) { animation-delay: 0.22s; }
-.h1 b { color: #B20051; }
+.h1 b { color: #B20051; font-weight: 400; }
 
 .lead {
   max-width: 760px;

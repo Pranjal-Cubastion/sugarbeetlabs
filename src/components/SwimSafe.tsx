@@ -7,7 +7,7 @@ const ITEMS = [
   { img: "/safe-1.svg", t: "Zero tolerance for nudity or hate" },
   { img: "/safe-2.svg", t: "Strictly 18+, no exceptions" },
   { img: "/safe-3.svg", t: "Suspicious accounts banned automatically" },
-  { img: "/safe-4.svg", t: "Every report reviewed within 24 hours" },
+  { img: "/safe-4.svg", t: "Every account is reviewed and verified" },
 ];
 
 export default function SwimSafe() {

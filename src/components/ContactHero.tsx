@@ -20,7 +20,7 @@ export default function ContactHero() {
 
       <div className={styles.inner}>
         <div className={styles.left}>
-          <h1 className={styles.h1}>Lettuce hear from You</h1>
+          <h1 className={styles.h1}>Lettuce hear from you</h1>
           <p className={styles.tagline}>
             Got a question? A suggestion? Just want to say &ldquo;hey, beet
             friend&rdquo;? Or feedback that&rsquo;s radish-ly honest — we&rsquo;re

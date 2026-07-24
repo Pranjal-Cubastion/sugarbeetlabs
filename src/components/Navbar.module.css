@@ -64,10 +64,13 @@
 }
 @media(max-width:1199px) {
   .nav {
-    position: fixed; top:0; right:-100%; width:362px; height:100%;
+    position: fixed; top:0; right:-100%; width:86%; max-width:420px; height:100%;
     z-index:2; justify-content:center;
     transition: all 0.6s cubic-bezier(0.21, 0.68, 0.41, 0.83);
-    opacity:0; background: rgba(0,0,0,0.97);
+    opacity:0; background: #FFB5D0;
+    /* organic curved left edge, like the reference */
+    border-radius: 150px 0 0 150px / 55% 0 0 45%;
+    box-shadow: -34px 0 70px rgba(20,20,20,0.28);
   }
   .navOpen { right:0; opacity:1; }
 }
@@ -78,11 +81,12 @@
 }
 @media(max-width:1199px) {
   .closeMenuBtn {
-    display: block; position:absolute; top:20px; right:20px;
-    width:40px; height:40px; border-radius:50%;
-    background: rgba(255,255,255,0.1);
+    display: flex; align-items:center; justify-content:center;
+    position:absolute; top:22px; right:22px;
+    width:52px; height:52px; border-radius:50%;
+    background: #141414;
     cursor:pointer; border:none;
-    color:#fff; font-size:1.2rem;
+    color:#fff; font-size:1.35rem;
   }
   .closeMenuBtn::before { content:'✕'; }
 }
@@ -94,14 +98,14 @@
 }
 @media(max-width:1199px) {
   .nav ul {
-    flex-direction:column; justify-content:center;
-    margin-left: 60px; height:100%;
+    flex-direction:column; justify-content:center; align-items:center;
+    margin-left: 0; height:100%; width:100%; padding:0 24px; text-align:center;
   }
 }
 
 .navLink { margin-left: 48px; }
 @media(max-width:1280px) { .navLink { margin-left:20px; } }
-@media(max-width:1199px) { .navLink { margin-left:0; margin-top:48px; } }
+@media(max-width:1199px) { .navLink { margin-left:0; margin-top:42px; } }
 .navLink:first-child { margin-left:0; }
 .navLink:last-child { display:none; }
 @media(max-width:1199px) { .navLink:last-child { display:block; margin-top:21px; } }
@@ -132,7 +136,13 @@
 /* Home: white nav links */
 .home .navLink a,
 .scrolled .navLink a { color:#fff; }
-@media(max-width:1199px) { .home .navLink a, .navLink a { color:#fff !important; } }
+/* Mobile menu — dark links on the light panel */
+@media(max-width:1199px) {
+  .home .navLink a, .scrolled .navLink a, .navLink a {
+    color:#141414 !important;
+    font-size:27px; font-weight:600;
+  }
+}
 
 /* Download App wrapper */
 .dwnWrapper {
@@ -238,6 +248,22 @@
   }
   .home .mobDwnButton { background:#fff; color: #141414; }
   .scrolled .mobDwnButton { background:#fff; color: #141414; }
+
+  /* In-menu CTA — always a solid dark pill on the light panel */
+  .nav .mobDwnButton,
+  .home .nav .mobDwnButton,
+  .scrolled .nav .mobDwnButton {
+    height:58px; padding:0 44px; border-radius:40px;
+    background:#141414 !important; color:#fff !important;
+    font-size:16px; font-weight:800;
+  }
+  /* keep the label visible (override the dark mobile link colour) */
+  .nav .mobDwnButton a,
+  .home .nav .mobDwnButton a,
+  .scrolled .nav .mobDwnButton a {
+    color:#fff !important;
+    font-size:16px; font-weight:800;
+  }
 }
 
 /* Burger menu */

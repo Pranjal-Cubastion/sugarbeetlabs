@@ -1,211 +1,200 @@
 "use client";
-import { useMemo, useState } from "react";
 import { useReveal } from "./useReveal";
 import styles from "./LabsContent.module.css";
 
-type Item = {
-  date: string;
-  tag: string;
-  title: string;
-  outlet?: string;
-};
-
-type TabKey = "Labs" | "Press" | "Blogs";
-const TABS: TabKey[] = ["Labs", "Press", "Blogs"];
-
-// Sample child content per tab — swap for a CMS / API later.
-const CONTENT: Record<TabKey, Item[]> = {
-  Labs: [
-    { date: "Jul 18, 2026", tag: "Experiment", title: "We're testing zodiac-powered match suggestions in-app" },
-    { date: "Jul 02, 2026", tag: "Feature drop", title: "Root Rallies: discover vegan events happening near you" },
-    { date: "Jun 20, 2026", tag: "Beta", title: "Screenshot & screen-record protection now in closed beta" },
-    { date: "Jun 05, 2026", tag: "Research", title: "What 2,000 plant-based daters told us about first dates" },
-    { date: "May 21, 2026", tag: "Experiment", title: "Value-based prompts that replace awkward filters" },
-    { date: "May 08, 2026", tag: "Feature drop", title: "Verified-only mode: every profile checked before it blooms" },
-  ],
-  Press: [
-    { date: "Jul 15, 2026", tag: "Press release", title: "Sugarbeet raises seed round to grow conscious dating", outlet: "TechCrunch" },
-    { date: "Jun 28, 2026", tag: "Coverage", title: "The dating app where your values come before your photos", outlet: "TIME" },
-    { date: "Jun 10, 2026", tag: "Coverage", title: "Meet the plant-powered answer to swipe fatigue", outlet: "Fast Company" },
-    { date: "May 30, 2026", tag: "Press release", title: "Sugarbeet pledges 1% of every subscription to good", outlet: "Mashable" },
-    { date: "May 12, 2026", tag: "Coverage", title: "Why conscious eaters are ditching generic dating apps", outlet: "Inc." },
-    { date: "Apr 24, 2026", tag: "Press release", title: "Sugarbeet opens its launch waitlist to the public", outlet: "AdAge" },
-  ],
-  Blogs: [
-    { date: "Jul 20, 2026", tag: "Guide", title: "5 green flags to look for on a first plant-based date" },
-    { date: "Jul 06, 2026", tag: "Community", title: "How to plan a zero-waste picnic date they'll remember" },
-    { date: "Jun 22, 2026", tag: "Astrology", title: "Your zodiac dating style, decoded for conscious love" },
-    { date: "Jun 09, 2026", tag: "Guide", title: "Writing a profile that leads with your values" },
-    { date: "May 26, 2026", tag: "Lifestyle", title: "Vegan date-night recipes worth staying in for" },
-    { date: "May 11, 2026", tag: "Community", title: "Real Sugarbeet stories: connections that took root" },
-  ],
-};
-
-// Brand palette cycled across the cards.
-const PALETTE = [
-  { bg: "#FFB5D0", fg: "#141414" },
-  { bg: "#7C92BF", fg: "#141414" },
-  { bg: "#D9B8D9", fg: "#141414" },
-  { bg: "#6B8372", fg: "#ffffff" },
-  { bg: "#B20051", fg: "#ffffff" },
-  { bg: "#141414", fg: "#ffffff" },
+// Ways the community can help shape the product.
+const SHAPE = [
+  "Join the beta waitlist",
+  "Suggest event ideas",
+  "Apply to become beta testers",
+  "Become a campus or city ambassador",
 ];
 
-const PAGE_SIZE = 3;
+// Open community polls.
+const POLLS = [
+  "Should astrology be part of matching?",
+  "Would you attend a Sugarbeet event in your city?",
+];
+
+// Transparent product roadmap.
+const ROADMAP: { phase: string; items: string[] }[] = [
+  {
+    phase: "Now",
+    items: ["Building the platform", "Growing the waitlist"],
+  },
+  {
+    phase: "Next",
+    items: [
+      "Kickstarter Campaign",
+      "Private beta",
+      "Community ambassadors",
+      "First local events",
+    ],
+  },
+  {
+    phase: "Coming Soon",
+    items: ["Public launch", "Volunteer meetups", "City communities"],
+  },
+];
+
+// Ways the community can help co-create Sugarbeet.
+const GROW = [
+  "Vote on new features",
+  "Submit ideas",
+  "Join beta testing",
+  "Become a city ambassador",
+  "Host a local Sugarbeet meetup",
+  "Share your plant-based dating experiences",
+];
 
 export default function LabsContent() {
-  const [tab, setTab] = useState<TabKey>("Labs");
-  const [query, setQuery] = useState("");
-  const [limit, setLimit] = useState(PAGE_SIZE);
-
-  const updates = useReveal<HTMLElement>(0.08);
+  const shape = useReveal<HTMLElement>(0.12);
+  const polls = useReveal<HTMLElement>(0.12);
+  const founder = useReveal<HTMLElement>(0.12);
+  const roadmap = useReveal<HTMLElement>(0.1);
+  const grow = useReveal<HTMLElement>(0.1);
   const cta = useReveal<HTMLElement>(0.2);
-
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    const items = CONTENT[tab];
-    if (!q) return items;
-    return items.filter(
-      (i) =>
-        i.title.toLowerCase().includes(q) ||
-        i.tag.toLowerCase().includes(q) ||
-        (i.outlet?.toLowerCase().includes(q) ?? false)
-    );
-  }, [tab, query]);
-
-  const visible = filtered.slice(0, limit);
-
-  const switchTab = (t: TabKey) => {
-    setTab(t);
-    setLimit(PAGE_SIZE);
-  };
 
   return (
     <>
-      {/* Hero — white, big type + media-kit card */}
+      {/* Hero — white, big type */}
       <section className={styles.hero} aria-label="Sugarbeet Labs">
         <div className={styles.heroGrid}>
           <div className={styles.heroText}>
             <h1 className={styles.h1}>
               <span>Sugarbeet</span>
-              <span>
-                <b>Labs</b>
-              </span>
+              <span className={styles.labs}>Labs</span>
             </h1>
             <p className={styles.lead}>
-              Experiments, press and fresh thinking from the team growing
-              conscious dating. Reach out at{" "}
-              <a href="mailto:labs@sugarbeetlabs.com">labs@sugarbeetlabs.com</a>.
+              We&rsquo;re researching, testing, and building a better way for
+              plant-based people to meet, connect, and build meaningful
+              relationships. Reach out at{" "}
+              <a href="mailto:hello@sugarbeetlabs.com">hello@sugarbeetlabs.com</a>.
             </p>
           </div>
-
-          <aside className={styles.kit} aria-label="Media resources">
-            <h2 className={styles.kitTitle}>
-              Media resources
-              <br />
-              you may need
-            </h2>
-            <p className={styles.kitText}>
-              Logos, product lifestyle images, app screenshots and more.
-            </p>
-            <a href="/contact" className={styles.kitBtn}>
-              Download media kit
-            </a>
-          </aside>
         </div>
       </section>
 
-      {/* Updates — dark band with search + tabs + card grid */}
+      {/* Help Shape Sugarbeet */}
       <section
-        ref={updates.ref}
-        className={`${styles.updates} ${updates.visible ? styles.visible : ""}`}
-        aria-label="Latest updates"
+        ref={shape.ref}
+        className={`${styles.shape} ${shape.visible ? styles.visible : ""}`}
+        aria-label="Help shape Sugarbeet"
       >
-        <div className={styles.updatesInner}>
-          <h2 className={styles.updatesTitle}>Our hottest updates</h2>
+        <div className={styles.shapeInner}>
+          <h2 className={styles.sectionTitle}>Help Shape Sugarbeet</h2>
+          <p className={styles.sectionLead}>
+            Sugarbeet is being built with its future community—not just for it.
+          </p>
+          <ul className={styles.shapeList}>
+            {SHAPE.map((s) => (
+              <li key={s} className={styles.shapeItem}>
+                {s}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-          <div className={styles.searchWrap}>
-            <span className={styles.searchIcon} aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="7" />
-                <path d="M21 21l-4.3-4.3" />
-              </svg>
-            </span>
-            <input
-              type="text"
-              className={styles.search}
-              placeholder={`Search ${tab.toLowerCase()}…`}
-              aria-label={`Search ${tab}`}
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setLimit(PAGE_SIZE);
-              }}
-            />
-          </div>
-
-          <div className={styles.tabs} role="tablist" aria-label="Content categories">
-            {TABS.map((t) => (
-              <button
-                key={t}
-                type="button"
-                role="tab"
-                aria-selected={tab === t}
-                className={`${styles.tab} ${tab === t ? styles.tabActive : ""}`}
-                onClick={() => switchTab(t)}
-              >
-                {t}
-              </button>
+      {/* Community Polls */}
+      <section
+        ref={polls.ref}
+        className={`${styles.polls} ${polls.visible ? styles.visible : ""}`}
+        aria-label="Community polls"
+      >
+        <div className={styles.pollsInner}>
+          <h2 className={styles.sectionTitle}>
+            <span aria-hidden="true">📊</span> Community Polls
+          </h2>
+          <div className={styles.pollGrid}>
+            {POLLS.map((p) => (
+              <div key={p} className={styles.pollCard}>
+                <span className={styles.pollQ}>{p}</span>
+              </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {visible.length > 0 ? (
-            <div className={styles.grid} role="tabpanel" aria-label={`${tab} updates`}>
-              {visible.map((item, i) => {
-                const c = PALETTE[i % PALETTE.length];
-                const tone = c.fg === "#ffffff" ? "dark" : "light";
-                return (
-                  <a
-                    key={`${tab}-${item.title}`}
-                    href="#"
-                    className={styles.card}
-                    data-tone={tone}
-                    style={{ backgroundColor: c.bg, color: c.fg }}
-                  >
-                    <div className={styles.cardTop}>
-                      <span className={styles.pill}>{item.date}</span>
-                      {item.outlet ? (
-                        <span className={styles.outlet}>{item.outlet}</span>
-                      ) : (
-                        <span className={styles.tag}>{item.tag}</span>
-                      )}
-                    </div>
-                    <h3 className={styles.cardTitle}>{item.title}</h3>
-                    <span className={styles.cardArrow} aria-hidden="true">
-                      Read more &rarr;
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
-          ) : (
-            <p className={styles.empty}>
-              No {tab.toLowerCase()} match &ldquo;{query}&rdquo; — try another
-              search.
-            </p>
-          )}
-
-          {limit < filtered.length && (
-            <div className={styles.showMoreWrap}>
-              <button
-                type="button"
-                className={styles.showMore}
-                onClick={() => setLimit((l) => l + PAGE_SIZE)}
+      {/* Roadmap timeline */}
+      <section
+        ref={roadmap.ref}
+        className={`${styles.roadmap} ${roadmap.visible ? styles.visible : ""}`}
+        aria-label="Roadmap"
+      >
+        <div className={styles.roadmapInner}>
+          <h2 className={styles.sectionTitle}>
+            <span aria-hidden="true">🚀</span> Roadmap
+          </h2>
+          <p className={styles.sectionLead}>
+            A transparent roadmap builds excitement — here&rsquo;s where
+            Sugarbeet is headed.
+          </p>
+          <ol className={styles.timeline}>
+            {ROADMAP.map((r, i) => (
+              <li
+                key={r.phase}
+                className={styles.stage}
+                style={{ transitionDelay: `${0.15 + i * 0.12}s` }}
               >
-                Show more
-              </button>
-            </div>
-          )}
+                <span className={styles.dot} aria-hidden="true" />
+                <div className={styles.stageBody}>
+                  <span className={styles.phaseName}>{r.phase}</span>
+                  <ul className={styles.phaseList}>
+                    {r.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Founder's Note */}
+      <section
+        ref={founder.ref}
+        className={`${styles.founder} ${founder.visible ? styles.visible : ""}`}
+        aria-label="Founder's note"
+      >
+        <div className={styles.founderInner}>
+          <h2 className={styles.sectionTitle}>
+            <span aria-hidden="true">💡</span> Founder&rsquo;s Note
+          </h2>
+          <p className={styles.founderText}>
+            We started Sugarbeet because we believe meaningful relationships grow
+            from shared values. Too many dating apps optimize for endless
+            swiping. We&rsquo;re building something different—a community where
+            compassion comes first and connections can flourish.
+          </p>
+          <div className={styles.signature}>
+            {/* TODO: replace with a real signature image (e.g. /signature.png) */}
+            <span className={styles.signMark} aria-hidden="true" />
+            <span className={styles.signName}>— The Sugarbeet Team 🌱</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Help Us Grow */}
+      <section
+        ref={grow.ref}
+        className={`${styles.grow} ${grow.visible ? styles.visible : ""}`}
+        aria-label="Help us grow"
+      >
+        <div className={styles.growInner}>
+          <h2 className={styles.sectionTitle}>Help Us Grow</h2>
+          <p className={styles.sectionLead}>
+            Instead of presenting ourselves as experts with all the answers,
+            we&rsquo;re inviting the community to co-create the product. 🌱
+          </p>
+          <ul className={styles.growList}>
+            {GROW.map((g) => (
+              <li key={g} className={styles.growItem}>
+                {g}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

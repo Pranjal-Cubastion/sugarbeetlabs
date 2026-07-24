@@ -24,11 +24,6 @@ const TILES = [
     alt: "How you can support Tankproof",
     cls: "t4",
   },
-  {
-    src: "/about-hero.webp",
-    alt: "Friends celebrating together under a blue sky",
-    cls: "t5",
-  },
 ];
 
 export default function PartnersContent() {

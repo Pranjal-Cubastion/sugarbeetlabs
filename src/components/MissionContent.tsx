@@ -30,10 +30,6 @@ export default function MissionContent() {
             Pledge: one percent of every subscription goes to causes our
             community cares about.
           </p>
-          <div className={styles.pills}>
-            <span className={styles.pill}>Coming soon on iOS</span>
-            <span className={styles.pill}>Coming soon on Android</span>
-          </div>
         </div>
       </section>
 
