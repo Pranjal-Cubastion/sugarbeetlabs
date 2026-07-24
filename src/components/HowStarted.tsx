@@ -13,7 +13,7 @@ export default function HowStarted() {
   const reasons = useReveal<HTMLDivElement>(0.12);
 
   return (
-    <section className={styles.section} aria-label="How SugarBeet started">
+    <section className={styles.section} aria-label="How Sugarbeet started">
       <div
         ref={start.ref}
         className={`${styles.startWrapper} ${start.visible ? styles.visible : ""}`}
@@ -21,7 +21,7 @@ export default function HowStarted() {
         <div className={styles.leftBlock}>
           <h2 className={styles.mainTitle}>
             <span>How</span>
-            <span>SugarBeet</span>
+            <span>Sugarbeet</span>
             <span>Started</span>
           </h2>
         </div>
@@ -59,7 +59,7 @@ export default function HowStarted() {
       >
         <div className={styles.reasonsInner}>
           <span className={styles.reasonsTitle}>
-            Three worthy reasons to choose <b>SugarBeet</b>
+            Three worthy reasons to choose <b>Sugarbeet</b>
           </span>
           <div className={styles.reasonsGrid}>
             {REASONS.map((r) => (

@@ -25,7 +25,7 @@ export default function MissionContent() {
             </span>
           </h1>
           <p className={styles.lead}>
-            SugarBeet believes connection should do more than bring people
+            Sugarbeet believes connection should do more than bring people
             together — it should help the world we live in. That&rsquo;s our 1%
             Pledge: one percent of every subscription goes to causes our
             community cares about.
@@ -70,7 +70,7 @@ export default function MissionContent() {
               Join Sugarbeet, rooted in <b>love</b>
             </h2>
             <p>
-              When you join SugarBeet, you&rsquo;re not just finding your
+              When you join Sugarbeet, you&rsquo;re not just finding your
               people — you&rsquo;re helping feed communities, protect animals,
               and care for the planet.
             </p>
@@ -108,7 +108,7 @@ export default function MissionContent() {
           <a
             href="/#download"
             className={styles.buttonDwn}
-            aria-label="Join the 1% Pledge — SugarBeet is coming soon"
+            aria-label="Join the 1% Pledge — Sugarbeet is coming soon"
           >
             Join the 1% Pledge
           </a>

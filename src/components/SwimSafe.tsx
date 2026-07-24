@@ -18,7 +18,7 @@ export default function SwimSafe() {
       ref={ref}
       id="safety"
       className={`${styles.section} ${visible ? styles.visible : ""}`}
-      aria-label="Staying safe on SugarBeet"
+      aria-label="Staying safe on Sugarbeet"
     >
       <div className={styles.topTitle}>
         <span className={styles.mainTitle}>
@@ -51,8 +51,8 @@ export default function SwimSafe() {
         ))}
       </div>
 
-      <a href="/#download" className={styles.buttonDwn} aria-label="Try SugarBeet now">
-        <b>Try SugarBeet now</b>
+      <a href="/#download" className={styles.buttonDwn} aria-label="Try Sugarbeet now">
+        <b>Try Sugarbeet now</b>
       </a>
     </section>
   );

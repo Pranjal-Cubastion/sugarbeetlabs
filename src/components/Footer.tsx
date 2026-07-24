@@ -37,8 +37,8 @@ export default function Footer() {
       <div className={styles.wrapper}>
         {/* Brand / contact column */}
         <div className={styles.brandCol}>
-          <a href="/" className={styles.logo} aria-label="SugarBeet Home">
-            <span className={styles.logoText}>SugarBeet</span>
+          <a href="/" className={styles.logo} aria-label="Sugarbeet Home">
+            <span className={styles.logoText}>Sugarbeet</span>
           </a>
           <p className={styles.tagline}>Where conscious love takes root.</p>
 
@@ -67,19 +67,10 @@ export default function Footer() {
 
           <div className={styles.contact}>
             <span className={styles.contactLabel}>Get in touch with us:</span>
-            <a href="tel:+15126316009">Phone: 512-631-6009</a>
             <a href="mailto:hello@sugarbeetlabs.com">
               Email: hello@sugarbeetlabs.com
             </a>
           </div>
-
-          <address className={styles.address}>
-            5900 Balcones Drive
-            <br />
-            Suite #29483
-            <br />
-            Austin, TX 78731
-          </address>
         </div>
 
         {/* Link columns */}
@@ -99,12 +90,12 @@ export default function Footer() {
 
       <div className={styles.copyrightWrapper}>
         <span className={styles.copyright}>
-          © 2026 SugarBeet Labs. All rights reserved.
+          © 2026 Sugarbeet Labs. All rights reserved.
         </span>
         <a
           href="#download"
           className={styles.downloadApp}
-          aria-label="SugarBeet app coming soon"
+          aria-label="Sugarbeet app coming soon"
         >
           Coming Soon
         </a>

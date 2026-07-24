@@ -12,11 +12,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sugarbeet.app"),
   title: {
-    default: "SugarBeet — Find Your Plant-Based Person",
-    template: "%s | SugarBeet",
+    default: "Sugarbeet — Find Your Plant-Based Person",
+    template: "%s | Sugarbeet",
   },
   description:
-    "SugarBeet is the #1 vegan dating app. Connect with like-minded plant-based singles who share your values. Find love, friendship, and a greener future together.",
+    "Sugarbeet is the #1 vegan dating app. Connect with like-minded plant-based singles who share your values. Find love, friendship, and a greener future together.",
   keywords: [
     "vegan dating app",
     "plant-based dating",
@@ -27,16 +27,16 @@ export const metadata: Metadata = {
     "vegan matchmaking",
     "sustainable lifestyle dating",
   ],
-  authors: [{ name: "SugarBeet Team" }],
-  creator: "SugarBeet",
-  publisher: "SugarBeet Labs",
+  authors: [{ name: "Sugarbeet Team" }],
+  creator: "Sugarbeet",
+  publisher: "Sugarbeet Labs",
   category: "Dating",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://sugarbeet.app",
-    siteName: "SugarBeet",
-    title: "SugarBeet — Find Your Plant-Based Person",
+    siteName: "Sugarbeet",
+    title: "Sugarbeet — Find Your Plant-Based Person",
     description:
       "Connect with vegan singles who share your values. The premium dating app built for plant-based people.",
     images: [
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
         url: "/hero-couple.png",
         width: 1200,
         height: 630,
-        alt: "SugarBeet vegan dating app — couple in nature",
+        alt: "Sugarbeet vegan dating app — couple in nature",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SugarBeet — Find Your Plant-Based Person",
+    title: "Sugarbeet — Find Your Plant-Based Person",
     description:
       "Connect with vegan singles who share your values. The premium dating app built for plant-based people.",
     images: ["/hero-couple.png"],
@@ -90,7 +90,7 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "SugarBeet",
+  name: "Sugarbeet",
   description:
     "The #1 vegan dating app. Connect with like-minded plant-based singles.",
   applicationCategory: "LifestyleApplication",

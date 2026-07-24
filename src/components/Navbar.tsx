@@ -33,9 +33,9 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "About", href: "/about" },
-    { label: "Labs", href: "/labs" },
     { label: "Mission", href: "/mission" },
     { label: "Partners", href: "/partners" },
+    { label: "Labs", href: "/labs" },
     { label: "Contact us", href: "/contact" },
   ];
 
@@ -43,15 +43,15 @@ export default function Navbar() {
     <header className={`${styles.header} ${overlayNav ? styles.home : ""} ${scrolled ? styles.scrolled : ""}`} role="banner">
       <div className={styles.wrapper}>
         {/* Logo */}
-        <a href="/" className={styles.logo} aria-label="SugarBeet — Home">
-          <span className={styles.logoText}>SugarBeet</span>
+        <a href="/" className={styles.logo} aria-label="Sugarbeet — Home">
+          <span className={styles.logoText}>Sugarbeet</span>
         </a>
 
         {/* Mobile download */}
         <a
           href="#download"
           className={`${styles.mobDwnButton} ${styles.isIos}`}
-          aria-label="SugarBeet app coming soon"
+          aria-label="Sugarbeet app coming soon"
         >
           Coming Soon
         </a>
@@ -89,7 +89,7 @@ export default function Navbar() {
               className={`${styles.dwnButton} ${dwOpen ? styles.active : ""}`}
               onClick={() => setDwOpen((p) => !p)}
               aria-expanded={dwOpen}
-              aria-label="SugarBeet app coming soon"
+              aria-label="Sugarbeet app coming soon"
             >
               <i className={styles.appleI} aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="currentColor">

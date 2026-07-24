@@ -24,9 +24,9 @@ const FEATURES = [
   },
   {
     img: "/bumble-date.webp",
-    title: "Rallies",
+    title: "Root Rallies",
     info: "Engage in meaningful conversations, discover vegan events near you, and build authentic connections.",
-    alt: "Rallies illustration",
+    alt: "Root Rallies illustration",
     link: "Join events",
     bg: "#7C92BF", // Wild Blue Yonder
   },
@@ -46,7 +46,7 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      aria-label="SugarBeet features"
+      aria-label="Sugarbeet features"
       className="bg-white"
     >
       <div className="mx-auto max-w-[1400px] px-[20px] py-[56px] md:px-[50px] md:py-[96px]">

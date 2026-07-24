@@ -7,7 +7,7 @@ export default function HeroSection() {
     <section
       className={styles.hero}
       id="home"
-      aria-label="SugarBeet — Rooted in Compassion"
+      aria-label="Sugarbeet — Rooted in Compassion"
     >
       {/* Full-bleed background photo */}
       <div className={styles.bg}>
@@ -39,7 +39,7 @@ export default function HeroSection() {
           <a
             href="#download"
             className={styles.cta}
-            aria-label="Explore SugarBeet now"
+            aria-label="Explore Sugarbeet now"
           >
             Explore Now
           </a>

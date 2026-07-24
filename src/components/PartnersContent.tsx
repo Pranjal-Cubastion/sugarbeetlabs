@@ -38,7 +38,7 @@ export default function PartnersContent() {
   return (
     <>
       {/* Hero — white, huge type */}
-      <section className={styles.hero} aria-label="SugarBeet partners">
+      <section className={styles.hero} aria-label="Sugarbeet partners">
         <div className={styles.heroInner}>
           <h1 className={styles.h1}>
             <span>We grow good</span>
@@ -118,7 +118,7 @@ export default function PartnersContent() {
         <a
           href="/contact"
           className={styles.buttonDwn}
-          aria-label="Become a SugarBeet partner"
+          aria-label="Become a Sugarbeet partner"
         >
           Become a partner
         </a>

@@ -6,10 +6,10 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Partners — Growing good together",
   description:
-    "The people and organizations SugarBeet stands behind — from aquatics access to food security — as part of our 1% Pledge.",
+    "The people and organizations Sugarbeet stands behind — from aquatics access to food security — as part of our 1% Pledge.",
   alternates: { canonical: "/partners" },
   openGraph: {
-    title: "SugarBeet Partners — We grow good together",
+    title: "Sugarbeet Partners — We grow good together",
     description:
       "Meet the partners bringing our 1% Pledge to life, starting with Tankproof.",
     url: "https://sugarbeet.app/partners",

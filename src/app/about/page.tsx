@@ -8,12 +8,12 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "About — Real people, real connections",
   description:
-    "SugarBeet is the dating app for plant-based hearts who lead with kindness. Learn how we started and how we keep the community real and safe.",
+    "Sugarbeet is the dating app for plant-based hearts who lead with kindness. Learn how we started and how we keep the community real and safe.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About SugarBeet — Real people, real connections",
+    title: "About Sugarbeet — Real people, real connections",
     description:
-      "How SugarBeet started, why authenticity comes first, and how we keep our community safe.",
+      "How Sugarbeet started, why authenticity comes first, and how we keep our community safe.",
     url: "https://sugarbeet.app/about",
   },
 };

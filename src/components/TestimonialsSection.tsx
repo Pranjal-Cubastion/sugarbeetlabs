@@ -5,17 +5,17 @@ import styles from "./TestimonialsSection.module.css";
 const TESTIMONIALS = [
   {
     emoji: "🌿", stars: 5,
-    text: "I never thought I'd find someone who gets excited about farmers markets as much as I do. SugarBeet matched us on shared values, not just photos. We've been together 14 months now! 💚",
+    text: "I never thought I'd find someone who gets excited about farmers markets as much as I do. Sugarbeet matched us on shared values, not just photos. We've been together 14 months now! 💚",
     name: "Priya & Sam", location: "San Francisco, CA", tag: "Matched 14 months ago",
   },
   {
     emoji: "🌸", stars: 5,
-    text: "As a long-time vegan, dating apps always felt off. SugarBeet changed that completely. Every profile here actually cares about the same things I do. Found my person in 3 weeks.",
+    text: "As a long-time vegan, dating apps always felt off. Sugarbeet changed that completely. Every profile here actually cares about the same things I do. Found my person in 3 weeks.",
     name: "Jordan M.", location: "London, UK", tag: "Member since 2023",
   },
   {
     emoji: "🌱", stars: 5,
-    text: "Our first date was a vegan food festival. Our second was volunteering at an animal sanctuary. SugarBeet brought us together, and our shared lifestyle keeps us growing closer every day.",
+    text: "Our first date was a vegan food festival. Our second was volunteering at an animal sanctuary. Sugarbeet brought us together, and our shared lifestyle keeps us growing closer every day.",
     name: "Mei & Alex", location: "Toronto, Canada", tag: "Matched 8 months ago",
   },
 ];
@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
         <div className={`${styles.header} reveal`}>
           <span className={styles.eyebrow}>Love Stories</span>
           <h2 className={styles.heading}>Real couples, <em>real roots</em></h2>
-          <p className={styles.sub}>Thousands of plant-based people found their person on SugarBeet.</p>
+          <p className={styles.sub}>Thousands of plant-based people found their person on Sugarbeet.</p>
         </div>
 
         <div className={`${styles.carousel} reveal reveal-delay-2`} role="region" aria-label="Testimonials" aria-live="polite">

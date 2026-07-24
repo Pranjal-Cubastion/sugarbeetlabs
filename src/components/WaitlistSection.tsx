@@ -39,14 +39,14 @@ export default function WaitlistSection() {
   return (
     <section
       id="download"
-      aria-label="Join the SugarBeet waitlist"
+      aria-label="Join the Sugarbeet waitlist"
       className="bg-white"
     >
       <div className="mx-auto max-w-[1400px] px-[20px] py-[56px] md:px-[50px] md:py-[96px]">
         {/* Big CTA */}
         <motion.a
           href="#waitlist-form"
-          aria-label="SugarBeet dating app coming soon"
+          aria-label="Sugarbeet dating app coming soon"
           initial={reduce ? false : { opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -54,7 +54,7 @@ export default function WaitlistSection() {
           className="group relative z-[1] flex h-[200px] w-full items-center justify-center overflow-hidden rounded-[32px] bg-[#141414] px-6 text-center text-[clamp(30px,4.4vw,60px)] font-extrabold leading-[1.05] text-white md:h-[280px]"
         >
           <span className="relative z-[1]">
-            The beet drops SOON
+            The beet drops SOON!
           </span>
           <span
             aria-hidden="true"
@@ -139,7 +139,7 @@ export default function WaitlistSection() {
           <div className="relative min-h-[320px] md:min-h-[460px]">
             <Image
               src="/get-the-app-desktop.png"
-              alt="The SugarBeet app shown on three phones"
+              alt="The Sugarbeet app shown on three phones"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-top"

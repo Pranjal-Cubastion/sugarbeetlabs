@@ -1,6 +1,6 @@
 {
-  "name": "SugarBeet",
-  "short_name": "SugarBeet",
+  "name": "Sugarbeet",
+  "short_name": "Sugarbeet",
   "description": "The dating app for plant-based people. Coming soon.",
   "start_url": "/",
   "display": "standalone",

@@ -17,19 +17,19 @@ const TABS: TabKey[] = ["Labs", "Press", "Blogs"];
 const CONTENT: Record<TabKey, Item[]> = {
   Labs: [
     { date: "Jul 18, 2026", tag: "Experiment", title: "We're testing zodiac-powered match suggestions in-app" },
-    { date: "Jul 02, 2026", tag: "Feature drop", title: "Rallies: discover vegan events happening near you" },
+    { date: "Jul 02, 2026", tag: "Feature drop", title: "Root Rallies: discover vegan events happening near you" },
     { date: "Jun 20, 2026", tag: "Beta", title: "Screenshot & screen-record protection now in closed beta" },
     { date: "Jun 05, 2026", tag: "Research", title: "What 2,000 plant-based daters told us about first dates" },
     { date: "May 21, 2026", tag: "Experiment", title: "Value-based prompts that replace awkward filters" },
     { date: "May 08, 2026", tag: "Feature drop", title: "Verified-only mode: every profile checked before it blooms" },
   ],
   Press: [
-    { date: "Jul 15, 2026", tag: "Press release", title: "SugarBeet raises seed round to grow conscious dating", outlet: "TechCrunch" },
+    { date: "Jul 15, 2026", tag: "Press release", title: "Sugarbeet raises seed round to grow conscious dating", outlet: "TechCrunch" },
     { date: "Jun 28, 2026", tag: "Coverage", title: "The dating app where your values come before your photos", outlet: "TIME" },
     { date: "Jun 10, 2026", tag: "Coverage", title: "Meet the plant-powered answer to swipe fatigue", outlet: "Fast Company" },
-    { date: "May 30, 2026", tag: "Press release", title: "SugarBeet pledges 1% of every subscription to good", outlet: "Mashable" },
+    { date: "May 30, 2026", tag: "Press release", title: "Sugarbeet pledges 1% of every subscription to good", outlet: "Mashable" },
     { date: "May 12, 2026", tag: "Coverage", title: "Why conscious eaters are ditching generic dating apps", outlet: "Inc." },
-    { date: "Apr 24, 2026", tag: "Press release", title: "SugarBeet opens its launch waitlist to the public", outlet: "AdAge" },
+    { date: "Apr 24, 2026", tag: "Press release", title: "Sugarbeet opens its launch waitlist to the public", outlet: "AdAge" },
   ],
   Blogs: [
     { date: "Jul 20, 2026", tag: "Guide", title: "5 green flags to look for on a first plant-based date" },
@@ -37,7 +37,7 @@ const CONTENT: Record<TabKey, Item[]> = {
     { date: "Jun 22, 2026", tag: "Astrology", title: "Your zodiac dating style, decoded for conscious love" },
     { date: "Jun 09, 2026", tag: "Guide", title: "Writing a profile that leads with your values" },
     { date: "May 26, 2026", tag: "Lifestyle", title: "Vegan date-night recipes worth staying in for" },
-    { date: "May 11, 2026", tag: "Community", title: "Real SugarBeet stories: connections that took root" },
+    { date: "May 11, 2026", tag: "Community", title: "Real Sugarbeet stories: connections that took root" },
   ],
 };
 
@@ -83,11 +83,11 @@ export default function LabsContent() {
   return (
     <>
       {/* Hero — white, big type + media-kit card */}
-      <section className={styles.hero} aria-label="SugarBeet Labs">
+      <section className={styles.hero} aria-label="Sugarbeet Labs">
         <div className={styles.heroGrid}>
           <div className={styles.heroText}>
             <h1 className={styles.h1}>
-              <span>SugarBeet</span>
+              <span>Sugarbeet</span>
               <span>
                 <b>Labs</b>
               </span>
@@ -215,7 +215,7 @@ export default function LabsContent() {
         className={`${styles.ctaSection} ${cta.visible ? styles.visible : ""}`}
         aria-label="Get in touch"
       >
-        <a href="/contact" className={styles.buttonDwn} aria-label="Get in touch with SugarBeet Labs">
+        <a href="/contact" className={styles.buttonDwn} aria-label="Get in touch with Sugarbeet Labs">
           Got a story? Let&rsquo;s talk
         </a>
       </section>

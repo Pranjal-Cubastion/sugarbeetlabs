@@ -58,7 +58,7 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section className={styles.section2} id="about" ref={ref} aria-label="Why SugarBeet">
+    <section className={styles.section2} id="about" ref={ref} aria-label="Why Sugarbeet">
       <div className={styles.wrapper}>
         {/* Left block */}
         <div className={`${styles.leftBlock} ${visible ? styles.visible : ""}`}>
@@ -81,7 +81,7 @@ export default function StatsSection() {
         <div className={styles.rightBlock}>
           <div
             className={styles.swiperContainer}
-            aria-label="What SugarBeet stands for"
+            aria-label="What Sugarbeet stands for"
             aria-live="polite"
             onMouseEnter={stopAuto}
             onMouseLeave={startAuto}

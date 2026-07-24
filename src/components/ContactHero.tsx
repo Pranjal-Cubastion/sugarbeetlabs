@@ -4,7 +4,7 @@ import styles from "./ContactHero.module.css";
 
 export default function ContactHero() {
   return (
-    <section className={styles.hero} aria-label="Contact SugarBeet">
+    <section className={styles.hero} aria-label="Contact Sugarbeet">
       <div className={styles.bg}>
         <Image
           src="/contact-hero.webp"
