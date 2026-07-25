@@ -14,7 +14,7 @@ const TESTIMONIALS = [
     name: "Jordan M.", location: "London, UK", tag: "Member since 2023",
   },
   {
-    emoji: "🌱", stars: 5,
+    emoji: "🍃", stars: 5,
     text: "Our first date was a vegan food festival. Our second was volunteering at an animal sanctuary. Sugarbeet brought us together, and our shared lifestyle keeps us growing closer every day.",
     name: "Mei & Alex", location: "Toronto, Canada", tag: "Matched 8 months ago",
   },

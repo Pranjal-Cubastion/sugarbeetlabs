@@ -73,7 +73,7 @@ export default function WaitlistSection() {
         >
           {/* Left — copy + form */}
           <div className="flex flex-col justify-center px-[24px] py-[48px] md:px-[56px] md:py-[64px]">
-            <h2 className="m-0 text-[42px] font-extrabold leading-[0.98] tracking-[-0.02em] text-white md:text-[clamp(52px,4.4vw,76px)]">
+            <h2 className="m-0 whitespace-nowrap text-[clamp(26px,7.4vw,42px)] font-extrabold leading-[0.98] tracking-[-0.02em] text-white md:text-[clamp(38px,3.9vw,56px)]">
               Join the beet-list
             </h2>
             <p className="m-0 mt-[16px] max-w-[460px] text-[17px] font-normal leading-snug text-white/80 md:text-[20px]">
@@ -120,7 +120,7 @@ export default function WaitlistSection() {
                     disabled={status === "submitting"}
                     className="h-[60px] shrink-0 rounded-full bg-[#141414] px-8 text-[17px] font-extrabold text-white transition-transform duration-300 hover:scale-[1.03] disabled:opacity-70"
                   >
-                    {status === "submitting" ? "Joining…" : "Join the waitlist"}
+                    {status === "submitting" ? "Joining…" : "Join the beet-list"}
                   </button>
                 </div>
                 {error && (

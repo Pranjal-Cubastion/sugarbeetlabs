@@ -24,8 +24,6 @@ const COLS = [
     heading: "Learn more",
     links: [
       { label: "Labs", href: "/labs" },
-      { label: "Blog", href: "/labs" },
-      { label: "Press center", href: "/labs" },
       { label: "FAQ", href: "/faq" },
     ],
   },
@@ -68,7 +66,7 @@ export default function Footer() {
           <div className={styles.contact}>
             <span className={styles.contactLabel}>Get in touch with us:</span>
             <a href="mailto:hello@sugarbeetlabs.com">
-              Email: hello@sugarbeetlabs.com
+              hello@sugarbeetlabs.com
             </a>
           </div>
         </div>

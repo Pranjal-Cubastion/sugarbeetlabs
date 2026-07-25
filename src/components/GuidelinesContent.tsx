@@ -60,7 +60,7 @@ const GUIDELINES: Guideline[] = [
       "Sell products or services through unsolicited messages.",
       "Attempt to deceive or manipulate other members.",
     ],
-    note: "Accounts engaging in fraudulent activity may be removed immediately.",
+    note: "Accounts engaging in fraudulent activity will be removed immediately.",
   },
   {
     n: 5,
@@ -97,7 +97,7 @@ export default function GuidelinesContent() {
         aria-label="Sugarbeet Community Guidelines"
       >
         <div className={styles.inner}>
-          <span className={styles.eyebrow}>Welcome to Sugarbeet 🌱</span>
+          <span className={styles.eyebrow}>Welcome to Sugarbeet</span>
           <h1 className={styles.h1}>
             <span>Community</span>
             <span className={styles.accent}>Guidelines</span>
@@ -173,7 +173,7 @@ export default function GuidelinesContent() {
             community.
           </p>
           <p className={styles.commitmentTag}>
-            Connect with purpose. Grow together. 🌱
+            Connect with purpose. Grow together.
           </p>
         </div>
       </section>
