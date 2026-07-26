@@ -7,7 +7,7 @@ const EASE = [0.21, 0.68, 0.41, 0.83] as const;
 // Secondary palette — one tint per feature card
 const FEATURES = [
   {
-    img: "/bumble-date.webp",
+    img: "/card1.png",
     title: "Value-based Matches",
     info: "Express who you are — connect with like-minded people who understand your lifestyle — eliminating awkward filters and guesswork.",
     alt: "Value-based Matches illustration",
@@ -15,7 +15,7 @@ const FEATURES = [
     bg: "#FFB5D0", // First Pink
   },
   {
-    img: "/bumble-date.webp",
+     img: "/card2.png",
     title: "Zodiac Compatibility",
     info: "Connect with people based on zodiac compatibility. Explore astrological insights, discover compatible matches, and find meaningful connections written in the stars.",
     alt: "Zodiac Compatibility illustration",
@@ -23,7 +23,7 @@ const FEATURES = [
     bg: "#D9B8D9", // Thistle
   },
   {
-    img: "/bumble-date.webp",
+ img: "/card3.png",
     title: "Root Rallies",
     info: "Engage in meaningful conversations, discover vegan events near you, and build authentic connections.",
     alt: "Root Rallies illustration",

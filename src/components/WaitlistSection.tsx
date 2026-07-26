@@ -138,7 +138,7 @@ export default function WaitlistSection() {
           {/* Right — media */}
           <div className="relative min-h-[320px] md:min-h-[460px]">
             <Image
-              src="/get-the-app-desktop.png"
+              src="/ftr.png"
               alt="The Sugarbeet app shown on three phones"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

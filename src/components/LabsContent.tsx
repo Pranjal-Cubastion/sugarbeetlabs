@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Script from "next/script";
 import { useReveal } from "./useReveal";
 import styles from "./LabsContent.module.css";
 
@@ -128,7 +129,47 @@ export default function LabsContent() {
               </div>
             ))}
           </div>
+
+          {/* forms.app popup trigger */}
+          <div className={styles.pollCta}>
+            <button
+              type="button"
+              className={styles.pollBtn}
+              {...({ formsappid: "6a64f849fb07cd9f86d69470" } as Record<
+                string,
+                string
+              >)}
+            >
+              Vote in our polls
+            </button>
+          </div>
         </div>
+
+        <Script
+          src="https://cdn.forms.app/embed.js"
+          strategy="afterInteractive"
+          onLoad={() => {
+            const w = window as unknown as {
+              formsapp?: new (...args: unknown[]) => void;
+            };
+            if (w.formsapp) {
+              new w.formsapp(
+                "6a64f849fb07cd9f86d69470",
+                "popup",
+                {
+                  overlay: "rgba(45, 45, 45, 0.5)",
+                  width: "600px",
+                  height: "600px",
+                  openingAnimation: {
+                    entrance: "animate__fadeIn",
+                    exit: "animate__fadeOut",
+                  },
+                },
+                "https://4gnd6yf9.forms.app"
+              );
+            }
+          }}
+        />
       </section>
 
       {/* Roadmap — dark band with timeline */}

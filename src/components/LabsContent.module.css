@@ -255,6 +255,42 @@
   color: #141414;
 }
 
+/* forms.app poll trigger button */
+.pollCta {
+  margin-top: clamp(28px, 3vw, 40px);
+}
+.pollBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 40px;
+  border: none;
+  border-radius: 40px;
+  background: #141414;
+  color: #fff;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.5s var(--ease-hily);
+}
+.pollBtn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #B20051;
+  border-radius: 40px;
+  transform: translateY(100%) scale(0.6);
+  opacity: 0;
+  transition: all 0.5s var(--ease-hily);
+}
+.pollBtn:hover::after { transform: translateY(0) scale(1.6); opacity: 1; border-radius: 0; }
+
 /* ===== Roadmap — dark band with timeline ===== */
 .roadmap {
   background: #2A1C27;
