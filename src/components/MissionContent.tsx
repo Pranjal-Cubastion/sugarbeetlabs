@@ -76,8 +76,8 @@ export default function MissionContent() {
           <div className={styles.impactMedia}>
             <div className={styles.imgWrap}>
               <Image
-                src="/blog-2.png"
-                alt="Friends sharing a plant-based meal at a garden cafe"
+                src="/pledge.jpg"
+                alt="A volunteer smiling with a rescued pig at an animal sanctuary"
                 fill
                 sizes="(max-width: 900px) 100vw, 50vw"
                 className={styles.img}

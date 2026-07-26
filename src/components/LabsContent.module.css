@@ -257,7 +257,7 @@
 
 /* ===== Roadmap — dark band with timeline ===== */
 .roadmap {
-  background: #141414;
+  background: #2A1C27;
   padding: clamp(72px, 9vw, 120px) 50px;
 }
 @media (max-width: 767px) { .roadmap { padding: 64px 20px; } }
@@ -325,15 +325,15 @@
   height: 24px;
   border-radius: 50%;
   background: #B20051;
-  border: 5px solid #141414;
+  border: 5px solid #2A1C27;
   box-shadow: 0 0 0 2px #B20051;
 }
 
 .stageBody {
   margin-top: 24px;
   padding: clamp(24px, 2vw, 32px);
-  background: #1e1e1e;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #3A2A35;
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 24px;
 }
 .phaseName {
@@ -422,16 +422,14 @@
   flex-direction: column;
   gap: 10px;
   margin-top: 40px;
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s var(--ease-hily) 0.2s, transform 0.8s var(--ease-hily) 0.2s;
 }
-.visible .signature { opacity: 1; transform: none; }
 .signImg {
   width: clamp(170px, 24vw, 280px);
   height: auto;
   /* Renders a black-on-white (or transparent) signature as clean white ink
-     on the green card — works whether the source PNG is white-bg or transparent. */
+     on the green card. NOTE: no opacity/transform reveal on the wrapper —
+     an animated ancestor creates a stacking context that makes this
+     mix-blend-mode flash a black box mid-transition. */
   filter: invert(1);
   mix-blend-mode: screen;
 }
