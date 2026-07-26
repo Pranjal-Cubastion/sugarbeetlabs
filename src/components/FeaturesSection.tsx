@@ -7,7 +7,7 @@ const EASE = [0.21, 0.68, 0.41, 0.83] as const;
 // Secondary palette — one tint per feature card
 const FEATURES = [
   {
-    img: "/card1.png",
+    img: "/card11.png",
     title: "Value-based Matches",
     info: "Express who you are — connect with like-minded people who understand your lifestyle — eliminating awkward filters and guesswork.",
     alt: "Value-based Matches illustration",
