@@ -31,7 +31,7 @@ const FEATURES = [
     bg: "#7C92BF", // Wild Blue Yonder
   },
   {
-    img: "/bumble-date.webp",
+    img: "/card4.png",
     title: "Safe, Verified & Private",
     info: "Every member is verified before joining. No fake accounts. Screenshot and screen recording protection helps keep your conversations private.",
     alt: "Safe, Verified & Private illustration",
