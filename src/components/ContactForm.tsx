@@ -135,7 +135,7 @@ export default function ContactForm() {
 
         <p className={styles.privacy}>
           For information about our privacy practices, please see our{" "}
-          <a href="#privacy">Privacy Policy</a>.
+          <a href="/privacy">Privacy Policy</a>.
         </p>
 
         {/* reCAPTCHA-style verification (visual replica) */}

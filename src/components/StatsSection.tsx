@@ -52,7 +52,7 @@ export default function StatsSection() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.2 });
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.01, rootMargin: "0px 0px -10% 0px" });
     obs.observe(el);
     return () => obs.disconnect();
   }, []);

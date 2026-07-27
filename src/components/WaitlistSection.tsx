@@ -49,7 +49,7 @@ export default function WaitlistSection() {
           aria-label="Sugarbeet dating app coming soon"
           initial={reduce ? false : { opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.7, ease: EASE }}
           className="group relative z-[1] flex h-[200px] w-full items-center justify-center overflow-hidden rounded-[32px] bg-[#141414] px-6 text-center text-[clamp(30px,4.4vw,60px)] font-extrabold leading-[1.05] text-white md:h-[280px]"
         >

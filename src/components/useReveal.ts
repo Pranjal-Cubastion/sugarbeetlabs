@@ -17,6 +17,9 @@ export function useReveal<T extends HTMLElement>(threshold = 0.18) {
       setVisible(true);
       return;
     }
+    // Use a 0 threshold with a bottom rootMargin so the reveal reliably fires
+    // on tall sections and short (mobile) viewports, where a fractional
+    // threshold may never be reached. `threshold` is kept as a small hint.
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -24,7 +27,7 @@ export function useReveal<T extends HTMLElement>(threshold = 0.18) {
           obs.disconnect();
         }
       },
-      { threshold, rootMargin: "0px 0px -8% 0px" }
+      { threshold: Math.min(threshold, 0.01), rootMargin: "0px 0px -10% 0px" }
     );
     obs.observe(el);
     return () => obs.disconnect();

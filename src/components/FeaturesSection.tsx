@@ -53,7 +53,7 @@ export default function FeaturesSection() {
         <motion.h2
           initial={reduce ? false : { opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.7, ease: EASE }}
           className="m-0 mb-[40px] max-w-[1250px] text-[40px] font-extrabold leading-[0.98] tracking-[-0.02em] text-[#141414] md:mb-[64px] md:text-[clamp(56px,5.4vw,104px)]"
         >

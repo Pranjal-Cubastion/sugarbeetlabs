@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Script from "next/script";
 import { useReveal } from "./useReveal";
 import styles from "./LabsContent.module.css";
 
@@ -129,18 +130,42 @@ export default function LabsContent() {
             ))}
           </div>
 
-          {/* forms.app poll — opens the hosted poll in a new tab */}
+          {/* forms.app poll — popup trigger (loads the form by ID) */}
           <div className={styles.pollCta}>
-            <a
-              href="https://4gnd6yf9.forms.app/6a64f849fb07cd9f86d69470"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
               className={styles.pollBtn}
+              {...({ formsappid: "6a64f849fb07cd9f86d69470" } as Record<
+                string,
+                string
+              >)}
             >
               Vote in our polls
-            </a>
+            </button>
           </div>
         </div>
+
+        <Script
+          src="https://cdn.forms.app/embed.js"
+          strategy="afterInteractive"
+          onLoad={() => {
+            const w = window as unknown as {
+              formsapp?: new (...args: unknown[]) => void;
+            };
+            if (w.formsapp) {
+              new w.formsapp(
+                "6a64f849fb07cd9f86d69470",
+                "popup",
+                {
+                  overlay: "rgba(45, 45, 45, 0.5)",
+                  width: "600px",
+                  height: "600px",
+                },
+                "https://4gnd6yf9.forms.app"
+              );
+            }
+          }}
+        />
       </section>
 
       {/* Roadmap — dark band with timeline */}

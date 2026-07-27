@@ -94,7 +94,13 @@
   transform: translateY(-50%) scale(1) rotate(0deg);
 }
 @media(max-width:1199px) {
-  .blob { display: none; }
+  /* keep the SVG blobs on mobile, just smaller and closer to the number */
+  .blob {
+    display: block;
+    right: calc(100% + 14px);
+    width: clamp(96px, 26vw, 170px);
+    height: clamp(96px, 26vw, 170px);
+  }
   .swiperContainer { justify-content:flex-start; }
 }
 

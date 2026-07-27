@@ -249,13 +249,15 @@
   .home .mobDwnButton { background:#fff; color: #141414; }
   .scrolled .mobDwnButton { background:#fff; color: #141414; }
 
-  /* In-menu CTA — always a solid dark pill on the light panel */
+  /* In-menu CTA — always a solid dark pill, centred on the panel */
   .nav .mobDwnButton,
   .home .nav .mobDwnButton,
   .scrolled .nav .mobDwnButton {
     height:58px; padding:0 44px; border-radius:40px;
     background:#141414 !important; color:#fff !important;
     font-size:16px; font-weight:800;
+    align-self:center;              /* centre in the flex column */
+    margin:34px auto 0 auto;        /* auto sides centre it, cancels margin-left:auto */
   }
   /* keep the label visible (override the dark mobile link colour) */
   .nav .mobDwnButton a,
