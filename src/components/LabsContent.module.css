@@ -296,7 +296,7 @@
 
 /* ===== Roadmap — dark band with timeline ===== */
 .roadmap {
-  background: #3A1E52;
+  background: #ffffff;
   padding: clamp(72px, 9vw, 120px) 50px;
 }
 @media (max-width: 767px) { .roadmap { padding: 64px 20px; } }
@@ -308,20 +308,20 @@
   font-weight: 800;
   line-height: 0.92;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: #000;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s var(--ease-hily), transform 0.8s var(--ease-hily);
 }
 .visible .roadmapTitle { opacity: 1; transform: none; }
-.roadmapTitle b { color: #FFB5D0; font-weight: 800; }
+.roadmapTitle b { color: #ff005d; font-weight: 800; }
 
 .roadmapLead {
   margin: 20px 0 0;
   font-size: clamp(17px, 1.4vw, 22px);
   font-weight: 400;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(83, 83, 83, 0.72);
   opacity: 0;
   transform: translateY(26px);
   transition: opacity 0.8s var(--ease-hily) 0.1s, transform 0.8s var(--ease-hily) 0.1s;
