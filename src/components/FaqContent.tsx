@@ -153,7 +153,7 @@ export default function FaqContent() {
         </div>
         <div className={styles.heroMedia}>
           <Image
-            src="/labs-hero.png"
+            src="/faq.png"
             alt="A member embracing her dog outdoors"
             fill
             priority

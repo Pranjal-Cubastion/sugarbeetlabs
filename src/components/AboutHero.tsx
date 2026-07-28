@@ -11,7 +11,7 @@ export default function AboutHero() {
       </h1>
       <div className={styles.imageWrap}>
         <Image
-          src="/about-hero.webp"
+          src="/about.png"
           alt="Two friends looking up at a bright blue sky, framing the moment with their hands"
           fill
           priority
