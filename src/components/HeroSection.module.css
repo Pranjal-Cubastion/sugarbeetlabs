@@ -26,6 +26,16 @@
   object-position: center 38%;
 }
 
+/* Background video — full-bleed cover, same framing as the photo */
+.bgVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+
 /* Dark scrim for text legibility — darker on the left/bottom where text sits */
 .scrim {
   position: absolute;

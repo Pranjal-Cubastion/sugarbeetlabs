@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
@@ -9,8 +9,21 @@ export default function HeroSection() {
       id="home"
       aria-label="Sugarbeet — Rooted in Compassion"
     >
-      {/* Full-bleed background photo */}
+      {/* Full-bleed background video */}
       <div className={styles.bg}>
+        <video
+          className={styles.bgVideo}
+          src="/home.mp4"
+          poster="/hero-couple.png"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        />
+
+        {/* Previous background photo — kept for easy recovery:
         <Image
           src="/hero-couple.png"
           alt="A happy couple sharing a moment together in a lush garden"
@@ -20,6 +33,7 @@ export default function HeroSection() {
           sizes="100vw"
           className={styles.bgImg}
         />
+        */}
       </div>
 
       {/* Legibility scrim */}
