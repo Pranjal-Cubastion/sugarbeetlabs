@@ -1,8 +1,25 @@
 "use client";
+import { useRef } from "react";
 import Image from "next/image";
 import Script from "next/script";
 import { useReveal } from "./useReveal";
 import styles from "./LabsContent.module.css";
+
+type FormsappInstance = { open: () => void; close: () => void };
+type FormsappCtor = new (
+  id: string,
+  type: string,
+  opts: Record<string, unknown>,
+  baseUrl: string
+) => FormsappInstance;
+
+const POLL_ID = "6a64f849fb07cd9f86d69470";
+const POLL_BASE = "https://4gnd6yf9.forms.app";
+const POLL_OPTS = {
+  overlay: "rgba(45, 45, 45, 0.5)",
+  width: "600px",
+  height: "600px",
+};
 
 // Ways the community can help shape the product.
 const SHAPE = [
@@ -53,6 +70,21 @@ export default function LabsContent() {
   const founder = useReveal<HTMLElement>(0.14);
   const grow = useReveal<HTMLElement>(0.1);
   const cta = useReveal<HTMLElement>(0.2);
+
+  // Holds the forms.app popup instance so the button can open it directly.
+  const pollRef = useRef<FormsappInstance | null>(null);
+
+  const initPoll = () => {
+    if (pollRef.current) return pollRef.current;
+    const ctor = (window as unknown as { formsapp?: FormsappCtor }).formsapp;
+    if (!ctor) return null;
+    pollRef.current = new ctor(POLL_ID, "popup", POLL_OPTS, POLL_BASE);
+    return pollRef.current;
+  };
+
+  const openPoll = () => {
+    initPoll()?.open();
+  };
 
   return (
     <>
@@ -130,16 +162,9 @@ export default function LabsContent() {
             ))}
           </div>
 
-          {/* forms.app poll — popup trigger (loads the form by ID) */}
+          {/* forms.app poll — opens the popup via the captured instance */}
           <div className={styles.pollCta}>
-            <button
-              type="button"
-              className={styles.pollBtn}
-              {...({ formsappid: "6a64f849fb07cd9f86d69470" } as Record<
-                string,
-                string
-              >)}
-            >
+            <button type="button" className={styles.pollBtn} onClick={openPoll}>
               Vote in our polls
             </button>
           </div>
@@ -148,23 +173,8 @@ export default function LabsContent() {
         <Script
           src="https://cdn.forms.app/embed.js"
           strategy="afterInteractive"
-          onLoad={() => {
-            const w = window as unknown as {
-              formsapp?: new (...args: unknown[]) => void;
-            };
-            if (w.formsapp) {
-              new w.formsapp(
-                "6a64f849fb07cd9f86d69470",
-                "popup",
-                {
-                  overlay: "rgba(45, 45, 45, 0.5)",
-                  width: "600px",
-                  height: "600px",
-                },
-                "https://4gnd6yf9.forms.app"
-              );
-            }
-          }}
+          onLoad={initPoll}
+          onReady={initPoll}
         />
       </section>
 
