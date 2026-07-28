@@ -173,8 +173,12 @@ export default function LabsContent() {
         <Script
           src="https://cdn.forms.app/embed.js"
           strategy="afterInteractive"
-          onLoad={initPoll}
-          onReady={initPoll}
+          onLoad={() => {
+            initPoll();
+          }}
+          onReady={() => {
+            initPoll();
+          }}
         />
       </section>
 
