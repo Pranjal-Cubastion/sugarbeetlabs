@@ -209,24 +209,36 @@ export default function LabsContent() {
         className={`${styles.band} ${founder.visible ? styles.visible : ""}`}
         aria-label="Founder's note"
       >
-        <div className={`${styles.card} ${styles.cardGreen}`}>
-          <span className={styles.eyebrow}>Founder&rsquo;s note</span>
-          <p className={styles.founderText}>
-            We started Sugarbeet because we believe meaningful relationships grow
-            from shared values. Too many dating apps optimize for endless
-            swiping. We&rsquo;re building something different&mdash;a community
-            where compassion comes first and connections can flourish.
-          </p>
-          <div className={styles.signature}>
-            {/* Save the founder signature to public/founder-signature.png */}
+        <div className={`${styles.card} ${styles.cardGreen} ${styles.founderCard}`}>
+          {/* Save the founder photo to public/founder-photo.png */}
+          <div className={styles.founderImgWrap}>
             <Image
-              src="/founder-signature.png"
-              alt="Founder's signature — S.A."
-              width={280}
-              height={120}
-              className={styles.signImg}
+              src="/founders-photo.jpg"
+              alt="Sugarbeet founder relaxing on a couch"
+              fill
+              sizes="(max-width: 860px) 100vw, 45vw"
+              className={styles.founderImg}
             />
-            <span className={styles.signName}>&mdash; The Sugarbeet Team</span>
+          </div>
+          <div className={styles.founderBody}>
+            <span className={styles.eyebrow}>Founder&rsquo;s note</span>
+            <p className={styles.founderText}>
+              We started Sugarbeet because we believe meaningful relationships
+              grow from shared values. Too many dating apps optimize for endless
+              swiping. We&rsquo;re building something different&mdash;a community
+              where compassion comes first and connections can flourish.
+            </p>
+            <div className={styles.signature}>
+              {/* Save the founder signature to public/founder-signature.png */}
+              <Image
+                src="/founder-signature.png"
+                alt="Founder's signature — S.A."
+                width={280}
+                height={120}
+                className={styles.signImg}
+              />
+              <span className={styles.signName}>&mdash; The Sugarbeet Team</span>
+            </div>
           </div>
         </div>
       </section>

@@ -426,6 +426,30 @@
 }
 
 /* ===== Founder's Note (green card) ===== */
+.founderCard {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(28px, 4vw, 60px);
+  align-items: center;
+}
+@media (max-width: 860px) { .founderCard { grid-template-columns: 1fr; gap: 28px; } }
+
+.founderImgWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 24px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 0.8s var(--ease-hily), transform 0.8s var(--ease-hily);
+}
+.visible .founderImgWrap { opacity: 1; transform: none; }
+@media (max-width: 860px) { .founderImgWrap { aspect-ratio: 4 / 3; } }
+.founderImg { object-fit: cover; }
+
+.founderBody { min-width: 0; }
+
 .eyebrow {
   display: inline-block;
   padding: 8px 18px;
@@ -470,6 +494,7 @@
      an animated ancestor creates a stacking context that makes this
      mix-blend-mode flash a black box mid-transition. */
   filter: invert(1);
+  border: 1px solid #fff;
   mix-blend-mode: screen;
 }
 .signName {
@@ -577,7 +602,7 @@
   .heroMedia, .heroImg { animation: none !important; clip-path: none !important; transform: none !important; }
   .h1 span, .lead, .bandTitle, .bandTitleLight, .bandLead, .bandLeadLight,
   .num, .numTitle, .sectionTitle, .sectionLead, .pollCard,
-  .roadmapTitle, .roadmapLead, .stage, .eyebrow, .founderText, .signature,
+  .roadmapTitle, .roadmapLead, .stage, .eyebrow, .founderImgWrap, .founderText, .signature,
   .growItem, .buttonDwn {
     animation: none !important;
     transition: none !important;
